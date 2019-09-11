@@ -99,23 +99,33 @@ int main() {
         size = input[i][0];
         x = input[i][1];
         y = input[i][2];
-
         length = pow(2,size);
-        board[x][y] = -1;
-        tile = 0;
-        ChessBoard(length,x,y,0,0);
-        cout<<"Case "<< i + 1 <<": n = "<<length<<endl;
-        for (int i = 0;i < length;i++)
+        if (size < 0 || x < 0 || y < 0)
+            cout<<"Case "<< i + 1 <<": Error!"<<endl;
+        else if (x >= length || y >= length)
+            cout<<"Case "<< i + 1 <<": Error!"<<endl;
+        else
         {
-            for (int j = 0;j < length;j++)
+
+            board[x][y] = -1;
+            tile = 0;
+            ChessBoard(length,x,y,0,0);
+            cout<<"Case "<< i + 1 <<": n = "<<length<<endl;
+            for (int i = 0;i < length;i++)
             {
-                if (i == x&&j == y)
-                    cout<<setw(5)<<c<<" ";
-                else
-                    cout<<setw(5)<<board[i][j]<<" ";
+                for (int j = 0;j < length;j++)
+                {
+                    if (i == x&&j == y)
+                        cout<<setw(5)<<c<<" ";
+                    else
+                        cout<<setw(5)<<board[i][j]<<" ";
+                }
+                cout<<endl;
             }
-            cout<<endl;
         }
+
+
+
     }
     return 0;
 }

@@ -3,4 +3,4 @@ project(algorithm_ex)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(algorithm_ex homework1-2.cpp)
+add_executable(algorithm_ex ex1.cpp)

@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/ClionProjects/algorithm_ex/cmake-build-debug"/>
+				<Option working_dir="C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="algorithm_ex">
-				<Option output="C:/ClionProjects/algorithm_ex/cmake-build-debug/algorithm_ex.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/ClionProjects/algorithm_ex/cmake-build-debug"/>
+				<Option output="C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/algorithm_ex.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -33,15 +33,15 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 algorithm_ex"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 algorithm_ex"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="algorithm_ex/fast">
-				<Option output="C:/ClionProjects/algorithm_ex/cmake-build-debug/algorithm_ex.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/ClionProjects/algorithm_ex/cmake-build-debug"/>
+				<Option output="C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/algorithm_ex.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -55,37 +55,37 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 algorithm_ex/fast"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 algorithm_ex/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/ClionProjects/algorithm_ex/cmake-build-debug"/>
+				<Option working_dir="C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/ClionProjects/algorithm_ex/cmake-build-debug"/>
+				<Option working_dir="C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/ClionProjects/algorithm_ex/homework1-2.cpp">
+		<Unit filename="C:/ClionProjects/Homework_2019/algorithm_ex/ex1.cpp">
 			<Option target="algorithm_ex"/>
 		</Unit>
-		<Unit filename="C:/ClionProjects/algorithm_ex/CMakeLists.txt">
+		<Unit filename="C:/ClionProjects/Homework_2019/algorithm_ex/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

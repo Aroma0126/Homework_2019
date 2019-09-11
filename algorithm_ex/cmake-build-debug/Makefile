@@ -47,10 +47,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\ClionProjects\algorithm_ex
+CMAKE_SOURCE_DIR = C:\ClionProjects\Homework_2019\algorithm_ex
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\ClionProjects\algorithm_ex\cmake-build-debug
+CMAKE_BINARY_DIR = C:\ClionProjects\Homework_2019\algorithm_ex\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\ClionProjects\algorithm_ex\cmake-build-debug\CMakeFiles C:\ClionProjects\algorithm_ex\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\ClionProjects\Homework_2019\algorithm_ex\cmake-build-debug\CMakeFiles C:\ClionProjects\Homework_2019\algorithm_ex\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\ClionProjects\algorithm_ex\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\ClionProjects\Homework_2019\algorithm_ex\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,32 +122,32 @@ algorithm_ex/fast:
 	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/build
 .PHONY : algorithm_ex/fast
 
-homework1-2.obj: homework1-2.cpp.obj
+ex1.obj: ex1.cpp.obj
 
-.PHONY : homework1-2.obj
+.PHONY : ex1.obj
 
 # target to build an object file
-homework1-2.cpp.obj:
-	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/homework1-2.cpp.obj
-.PHONY : homework1-2.cpp.obj
+ex1.cpp.obj:
+	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/ex1.cpp.obj
+.PHONY : ex1.cpp.obj
 
-homework1-2.i: homework1-2.cpp.i
+ex1.i: ex1.cpp.i
 
-.PHONY : homework1-2.i
+.PHONY : ex1.i
 
 # target to preprocess a source file
-homework1-2.cpp.i:
-	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/homework1-2.cpp.i
-.PHONY : homework1-2.cpp.i
+ex1.cpp.i:
+	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/ex1.cpp.i
+.PHONY : ex1.cpp.i
 
-homework1-2.s: homework1-2.cpp.s
+ex1.s: ex1.cpp.s
 
-.PHONY : homework1-2.s
+.PHONY : ex1.s
 
 # target to generate assembly for a file
-homework1-2.cpp.s:
-	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/homework1-2.cpp.s
-.PHONY : homework1-2.cpp.s
+ex1.cpp.s:
+	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/ex1.cpp.s
+.PHONY : ex1.cpp.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... algorithm_ex
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... homework1-2.obj
-	@echo ... homework1-2.i
-	@echo ... homework1-2.s
+	@echo ... ex1.obj
+	@echo ... ex1.i
+	@echo ... ex1.s
 .PHONY : help
 
 
