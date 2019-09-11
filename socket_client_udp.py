@@ -1,4 +1,6 @@
 
+
+
 import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -10,3 +12,12 @@ s.sendto(data.encode(), (host, port))
 print(s.recv(1024))
 
 s.close()  # 关闭
+
+
+
+
+
+
+
+
+

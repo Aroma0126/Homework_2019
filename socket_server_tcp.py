@@ -2,15 +2,16 @@
 # 服务器端/创建服务
 import socket
 import threading
+import json
 
 s = None
 connection_pool = []  # 连接池
 # 账户密码列表
 info_list = [
-  {'flj','123456'},
-  {'tom','654321'},
-  {'fiona','000000'},
-  {'user','888888'}
+  {'name': 'flj' ,'password': 12345},
+  {'name': 'tom', 'password': 54321},
+  {'name': 'fiona', 'password': 11111},
+  {'name': 'jack', 'password': 22222}
 ]
 
 
@@ -47,17 +48,39 @@ def accept_client():
 
 
 def handle_message(client,address):
-  client.sendall("Connected Successfully!".encode(encoding='utf8'))
-  while True:
-    data = client.recv(1024)
-    print("The client host: ",address)
-    print("Client message: ",data)
-    if len(data) == 0:
-      client.close()
-      # 删除连接
-      connection_pool.remove(client)
-      # print("Connection from " + address + "closed.")
+
+  ret = client.recv(1024)
+  # print(ret)
+  # client_info = json.load(ret)
+  client_info = json.loads(ret.decode(encoding='utf-8'))
+
+  success = False
+  for i_info in info_list:
+
+    name = i_info['name']
+    password = i_info['password']
+
+    if (name == client_info['name'] and str(password) == client_info['password']):
+      # print("success!")
+      success = True
       break
+
+  if success:
+    client.sendall("Connected Successfully!".encode(encoding='utf8'))
+    while True:
+      data = client.recv(1024)
+      print("The client host: ", address,end='')
+      print(" Client message: ", data)
+      if len(data) == 0:
+        client.close()
+        # 删除连接
+        connection_pool.remove(client)
+        # print("Connection from " + address + "closed.")
+        break
+  else:
+    client.sendall("name or password is incorrect!".encode('utf-8'))
+    client.close()
+    connection_pool.remove(client)
 
 
 if __name__ == '__main__':
@@ -86,6 +109,7 @@ if __name__ == '__main__':
     elif n == '2':
       index, msg = input("Please input “index/message” ").split("/")
       connection_pool[int(index)].sendall(msg.encode(encoding='utf8'))
+
     elif n == '3':
       exit()
     elif n == '4':
