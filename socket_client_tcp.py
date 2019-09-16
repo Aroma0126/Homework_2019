@@ -21,11 +21,18 @@ while True:
   try:
 
     # 发送登陆信息
+    msg = 'msg'
     name = input("input name: ")
     password = input("input password: ") # python 的getpass模块只能在指定ide中才起作用，故这里依然明文显示
     client_info = json.dumps({'name':name, 'password':password}).encode('utf-8')
     s.send(client_info)
-    print(s.recv(1024).decode(encoding='utf-8')) # 接收TCP数据，数据以字符串形式返回，参数指定要接收的最大数据量(BUFSIZE)
+
+    msg = s.recv(1024).decode(encoding='utf-8') # 大坑！！！！！！！！！！！
+    # 只会接收一次，用msg去装载，如果
+    print(msg) # 接收TCP数据，数据以字符串形式返回，参数指定要接收的最大数据量(BUFSIZE)
+
+    if msg == 'name or password is incorrect!':
+      exit()
 
     print('''
                   |----------------------------------|

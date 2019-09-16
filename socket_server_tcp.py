@@ -86,7 +86,9 @@ def handle_message(client,address):
 
     else:
       client.sendall("name or password is incorrect!".encode('utf-8'))
+
       client.close()
+
       connection_pool.remove(client)
 
   except Exception as e:
