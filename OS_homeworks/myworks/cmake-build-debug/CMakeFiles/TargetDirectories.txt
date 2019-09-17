@@ -1,0 +1,3 @@
+C:/ClionProjects/Homework_2019/OS_homeworks/myworks/cmake-build-debug/CMakeFiles/myworks.dir
+C:/ClionProjects/Homework_2019/OS_homeworks/myworks/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/ClionProjects/Homework_2019/OS_homeworks/myworks/cmake-build-debug/CMakeFiles/rebuild_cache.dir
