@@ -5,7 +5,7 @@ import threading
 import json
 
 s = None
-connection_pool = []  # 连接池
+connection_pool = list()  # 连接池
 # 账户密码列表
 info_list = [
   {'name': 'flj' ,'password': 12345},
@@ -14,11 +14,11 @@ info_list = [
   {'name': 'jack', 'password': 22222}
 ]
 
+client_index_list = list() # 用来存储相应的端口号和下表索引
 
 def init():
   global s  # 全局变量
-  global i
-  i = 0
+
   s = socket.socket(socket.AF_INET,socket.SOCK_STREAM) # 创建一个socket对象,使用TCP协议
 
   host = socket.gethostname() # 获取本地主机名
@@ -39,8 +39,10 @@ def accept_client():
       # accept() : 被动接受TCP客户端连接,(阻塞式)等待连接的到来
       client, address = s.accept()
       # 为每个客户端添加一个独立的线程
+      # print(type(address[1]),address[1])
+      client_index_list.append(address[1]) # 存储每个端口号，发送消息时直接根据端口号来找出索引
       connection_pool.append(client)
-      # i += 1
+
       # 创建一个新的线程
       t = threading.Thread(target=handle_message,args=(client,address))
       t.setDaemon(True)
@@ -77,6 +79,9 @@ def handle_message(client,address):
           client.sendall(msg.encode(encoding='utf8'))
           client.close() # 删除连接
           connection_pool.remove(client)
+          client_index_list.remove(address)
+
+
           print("\nOne client closed.")
           break
         client.sendall('get message'.encode(encoding='utf8'))
@@ -114,7 +119,12 @@ if __name__ == '__main__':
       print("Online number is : ",len(connection_pool))
 
     elif n == '2':
-      index, msg = input("Please input “index/message” ").split("/")
+      port, msg = input("Please input “index/message” ").split("/")
+      index = 0
+      for i in range(0,len(client_index_list) - 1):
+        if client_index_list[i] == port:
+          index = i
+          break
       connection_pool[int(index)].sendall(msg.encode(encoding='utf8'))
 
     elif n == '3':
