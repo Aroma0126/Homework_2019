@@ -2,6 +2,7 @@
 # 客户端
 import socket
 import json
+import wx # gui界面
 
 s = None
 
@@ -49,13 +50,23 @@ def get_message():
     print(data)
     break
 
+def gui(): # 随便写的，没什么用
 
+  app = wx.App(False)
+  frame = wx.Frame(None, title="Login Page", size=(410, 335))
+  frame.Show()
+
+  name = wx.TextCtrl(frame, pos=(35, 5), size=(210, 25))
+  password = wx.TextCtrl(frame, pos=(35, 35), size=(210, 25))
+  login_Button = wx.Button(frame, label='login', pos=(65, 80), size=(80, 25))
+  login_Button.Bind(wx.EVT_BUTTON, login(name.GetValue(),password.GetValue()))
+
+  app.MainLoop()
 
 if __name__ == '__main__':
 
   init()
   login()
-
   print('''
                 |----------------------------------|
                 | input 1:Waiting for message...   |

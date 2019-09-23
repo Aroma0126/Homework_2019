@@ -9,9 +9,9 @@ connection_pool = list()  # 连接池
 # 账户密码列表
 info_list = [
   {'name': 'flj' ,'password': 12345},
-  {'name': 'tom', 'password': 54321},
-  {'name': 'fiona', 'password': 11111},
-  {'name': 'jack', 'password': 22222}
+  {'name': 'wyn', 'password': 12346},
+  {'name': 'cc', 'password': 12347},
+  {'name': 'teacher', 'password': 66666}
 ]
 
 client_index_list = list() # 用来存储相应的端口号和下表索引
@@ -36,11 +36,10 @@ def accept_client():
 
   while True: # 不断接受新连接
     try:
-      # accept() : 被动接受TCP客户端连接,(阻塞式)等待连接的到来
+      global address
       client, address = s.accept()
-      # 为每个客户端添加一个独立的线程
-      # print(type(address[1]),address[1])
-      client_index_list.append(address[1]) # 存储每个端口号，发送消息时直接根据端口号来找出索引
+
+      client_index_list.append(address[1])  # 存储每个端口号，发送消息时直接根据端口号来找出索引
       connection_pool.append(client)
 
       # 创建一个新的线程
@@ -68,9 +67,6 @@ def handle_message(client,address):
 
     if success:
       client.sendall("Connected Successfully!".encode(encoding='utf8'))
-      data = client.recv(1024)
-      print("\nThe client host: ", address, end='')
-      print(" Client message: ", data.decode(encoding='utf-8'))
 
       while True:
         data = client.recv(1024)
@@ -79,18 +75,15 @@ def handle_message(client,address):
           client.sendall(msg.encode(encoding='utf8'))
           client.close() # 删除连接
           connection_pool.remove(client)
-          client_index_list.remove(address)
-
-
+          client_index_list.remove(address[1])
           print("\nOne client closed.")
           break
-        client.sendall('get message'.encode(encoding='utf8'))
+        # client.sendall('get message'.encode(encoding='utf8')) 只是为了测试而已。。。。
         print("\nThe client host: ", address,end='')
         print(" Client message: ", data.decode(encoding='utf-8'))
     else:
       client.sendall("name or password is incorrect!".encode('utf-8'))
       client.close()
-      connection_pool.remove(client)
 
   except Exception as e:
     print("\nSome mistakes: ",e)
@@ -119,10 +112,11 @@ if __name__ == '__main__':
       print("Online number is : ",len(connection_pool))
 
     elif n == '2':
-      port, msg = input("Please input “index/message” ").split("/")
+      port, msg = input("Please input “port/message” ").split("/")
       index = 0
-      for i in range(0,len(client_index_list) - 1):
-        if client_index_list[i] == port:
+      for i in range(len(client_index_list)):
+        k = int(client_index_list[i])
+        if k == int(port):
           index = i
           break
       connection_pool[int(index)].sendall(msg.encode(encoding='utf8'))
@@ -132,12 +126,16 @@ if __name__ == '__main__':
       exit()
 
     elif n == '4':
-      close_i = input("Please input the close index ")
+      close_port = input("Please input the close port ")
       msg = 'close'
-      connection_pool[int(close_i)].sendall(msg.encode(encoding='utf8'))
-      connection_pool[int(close_i)].close()
-      # connection_pool[int(close_i)].remove()
-      # 还没有解决
+      index = 0
+      for i in range(len(client_index_list)):
+        k = int(client_index_list[i])
+        if k == int(close_port):
+          index = i
+          break
 
-
+      connection_pool[int(index)].sendall(msg.encode(encoding='utf8'))
+      connection_pool[int(index)].close()
+      del client_index_list[index] # delete the port
 
