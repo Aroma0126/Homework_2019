@@ -36,11 +36,9 @@ def accept_client():
 
   while True: # 不断接受新连接
     try:
+      # accept() : 被动接受TCP客户端连接,(阻塞式)等待连接的到来
       global address
       client, address = s.accept()
-
-      client_index_list.append(address[1])  # 存储每个端口号，发送消息时直接根据端口号来找出索引
-      connection_pool.append(client)
 
       # 创建一个新的线程
       t = threading.Thread(target=handle_message,args=(client,address))
@@ -66,6 +64,9 @@ def handle_message(client,address):
         break
 
     if success:
+      # 为每个客户端添加一个独立的线程
+      client_index_list.append(address[1])  # 存储每个端口号，发送消息时直接根据端口号来找出索引
+      connection_pool.append(client)
       client.sendall("Connected Successfully!".encode(encoding='utf8'))
 
       while True:
@@ -78,7 +79,7 @@ def handle_message(client,address):
           client_index_list.remove(address[1])
           print("\nOne client closed.")
           break
-        # client.sendall('get message'.encode(encoding='utf8')) 只是为了测试而已。。。。
+        client.sendall('get message'.encode(encoding='utf8'))
         print("\nThe client host: ", address,end='')
         print(" Client message: ", data.decode(encoding='utf-8'))
     else:
@@ -114,6 +115,8 @@ if __name__ == '__main__':
     elif n == '2':
       port, msg = input("Please input “port/message” ").split("/")
       index = 0
+      # print(len(client_index_list))
+      # print(client_index_list)
       for i in range(len(client_index_list)):
         k = int(client_index_list[i])
         if k == int(port):
@@ -128,7 +131,7 @@ if __name__ == '__main__':
     elif n == '4':
       close_port = input("Please input the close port ")
       msg = 'close'
-      index = 0
+
       for i in range(len(client_index_list)):
         k = int(client_index_list[i])
         if k == int(close_port):

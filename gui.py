@@ -1,25 +1,66 @@
+from tkinter import *
+import socket
+import threading
+import json
 
-import wx
 
-def login(event):
-  n = name.GetValue()
-  p = password.GetValue()
-  if n == 'test' and p == '111':
-    context.SetValue('welcome')
-  else:
-    context.SetValue('name or pwd is incorrect')
+def init():
+  global s
+  s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+  host = socket.gethostname()
+  port = 12346
 
-# 构建一个新窗体
-app = wx.App(False)
-frame = wx.Frame(None, title="Login Page", size=(410, 335))
-frame.Show()
-# 定义两个输入框
-name = wx.TextCtrl(frame, pos=(35, 5), size=(210, 25))
-password = wx.TextCtrl(frame, pos=(35, 35), size=(210, 25))
-# 定义按钮 绑定事件
-login_Button = wx.Button(frame, label='login', pos=(65, 65), size=(80, 25))
-login_Button.Bind(wx.EVT_BUTTON, login)
-# 定义打印台
-context = wx.TextCtrl(frame, pos=(35, 100), size=(300, 300))
+  s.connect((host, port))  # 定义连接
 
-app.MainLoop()
+
+  name = 'flj'
+  password = '12345'
+  client_info = json.dumps({'name': name, 'password': password}).encode('utf-8')
+  s.send(client_info)
+
+  msg = s.recv(1024).decode(encoding='utf-8')
+  print(msg)
+
+  message = 'i am here!'  # 只是为了让服务器打印出来端口号方便发消息，没别的意思
+  s.sendall(message.encode(encoding='utf-8'))
+
+
+def recv():
+  while True:
+    data = s.recv(1024).decode(encoding='utf-8')
+    print('\n' + data + '\n')
+
+
+class GUI:
+
+  def __init__(self, root):
+    self.root = root
+    self.listBox = Listbox(self.root)
+    self.listBox.pack()
+    self.entry = Entry(self.root)
+    self.entry.pack()
+    self.sendBtn = Button(self.root, text='发送', command=self.send)
+    self.sendBtn.pack()
+
+  def send(self):
+    send_data = self.entry.get()
+    s.send(send_data.encode())
+
+def createGUI():
+  global gui
+  root = Tk()
+  gui = GUI(root)
+  root.title('客户端')
+  root.mainloop()
+
+
+if __name__ == '__main__':
+
+  init()
+  # 同时做两件事情
+  t1 = threading.Thread(target=recv, args=(), name='recv')
+  t2 = threading.Thread(target=createGUI, args=(), name='gui')
+
+  t1.start()
+  t2.start()
+

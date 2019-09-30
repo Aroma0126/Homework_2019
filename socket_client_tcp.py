@@ -3,6 +3,7 @@
 import socket
 import json
 import wx # gui界面
+import threading
 
 s = None
 
@@ -63,23 +64,21 @@ def gui(): # 随便写的，没什么用
 
   app.MainLoop()
 
-if __name__ == '__main__':
+def menu():
 
-  init()
-  login()
   print('''
-                |----------------------------------|
-                | input 1:Waiting for message...   |
-                | input 2:Sending message to client|
-                | input 3:Close server             |
-                |----------------------------------|
-    ''')
+                  |----------------------------------|
+                  | input 1:Waiting for message...   |
+                  | input 2:Sending message to client|
+                  | input 3:Close server             |
+                  |----------------------------------|
+      ''')
 
   while True:
     n = input(">>>")
     if n == '1':
       get_message()
-    elif n == '2': # 发送exit可自动退出
+    elif n == '2':  # 发送exit可自动退出
       message = input("input you message here: ")
       s.sendall(message.encode(encoding='utf-8'))
       data = s.recv(1024).decode(encoding='utf-8')
@@ -93,10 +92,13 @@ if __name__ == '__main__':
       exit()
 
 
-# 待解决的问题： 当服务器关闭时客户端主动关闭
-# 针对上面一个问题，即服务器关闭了而客户端不能
-# 立即接收到，只能等到客服端主动发起动作的时候才能收到关闭的信息
-# 解决：利用心跳包检测
-#
-# 客户端发送消息关闭
-# 关闭客户端时打印文字，正常关闭
+if __name__ == '__main__':
+
+  init()
+  login()
+
+  thread1 = threading.Thread(target=get_message)
+  thread2 = threading.Thread(target=menu)
+
+  thread1.start()
+  thread2.start()
