@@ -5,6 +5,11 @@
 #include "stdlib.h"
 #include "unistd.h"
 
+/**
+ * 子进程是如何产生的？ 调用fork产生的
+ * 又是如何结束的？ 当定义其return 0; 时结束
+ * 子进程被创建后它的运行环境是怎样建立的？ 跟随父进程
+**/
 
 int main() {
 
