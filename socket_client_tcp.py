@@ -29,9 +29,7 @@ def login():
     password = var_usr_pwd.get()
     client_info = json.dumps({'name': name, 'password': password}).encode('utf-8')
     s.send(client_info)
-    msg = s.recv(1024).decode(encoding='utf-8')  # 大坑！！！！！！！！！！！
-    # 只会接收一次，用msg去装载，如果先接受信息，再去赋值给msg那么就赋值失败了
-    # 接收TCP数据，数据以字符串形式返回，参数指定要接收的最大数据量(BUFSIZE)
+    msg = s.recv(1024).decode(encoding='utf-8')
     print(msg)
     if msg == 'name or password is incorrect!':
         tk.Label(window, text='用户名或密码错误!', font=('Arial', 14)).place(x=110, y=190)
@@ -54,6 +52,7 @@ def get_message():
             gui.Text.insert('end', 'The server has closed you!'+ '\n')
             gui.Text.see('end')
             messagebox.showinfo('提示', '服务器已关闭你的客户端！')
+
             s.close()
         elif data == 'the server has closed!':
             flag2 = 1
@@ -75,7 +74,8 @@ class GUI:
     self.entry = tk.Entry(self.root, width=40,textvariable=self.msg).place(x=75, y=210)
     self.btn_send = tk.Button(self.root, width=30, text='发送', command=self.send)
     self.btn_send.place(x=80, y=240)
-    self.btn_close = tk.Button(self.root, width=30, text='关闭客户端', command=self.close)
+    # self.btn_close = tk.Button(self.root, width=30, text='关闭客户端', command=self.close)
+    self.btn_close = tk.Button(self.root, width=30, text='关闭客户端', command=lambda:self.close(root))
     self.btn_close.place(x=80, y=280)
 
   def send(self):
@@ -92,12 +92,11 @@ class GUI:
         self.msg.set('')
         tk.messagebox.showerror('错误', '服务器已关闭你的客户端！')
 
-
-
-  def close(self):
+  def close(self,root):
       send_data = 'close'
       s.send(send_data.encode())
       s.close()
+      root.destroy()
       exit()
 
 def createGUI():

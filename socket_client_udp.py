@@ -61,7 +61,7 @@ class GUI:
     self.entry = tk.Entry(self.root, width=40,textvariable=self.msg).place(x=75, y=210)
     self.btn_send = tk.Button(self.root, width=30, text='发送', command=self.send)
     self.btn_send.place(x=80, y=240)
-    self.btn_close = tk.Button(self.root, width=30, text='关闭客户端', command=self.close)
+    self.btn_close = tk.Button(self.root, width=30, text='关闭客户端', command=lambda: self.close(root))
     self.btn_close.place(x=80, y=280)
 
   def send(self):
@@ -79,10 +79,11 @@ class GUI:
       tk.messagebox.showwarning('警告','服务器已关闭你的客户端！')
 
 
-  def close(self):
+  def close(self,root):
       send_data = 'close'
       s.sendto(send_data.encode(), (host, port))
       s.close()
+      root.destroy()
       exit()
 
 def createGUI():

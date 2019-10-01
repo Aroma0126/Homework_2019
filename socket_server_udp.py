@@ -128,7 +128,6 @@ def close():
 
 if __name__ == '__main__':
 
-
   init()
   thread = threading.Thread(target=get_mes)
   thread.setDaemon(True)
