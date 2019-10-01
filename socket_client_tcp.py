@@ -1,104 +1,135 @@
-
-# 客户端
 import socket
 import json
-import wx # gui界面
+import tkinter as tk  # 使用Tkinter前需要先导入
+from tkinter import messagebox
 import threading
 
 s = None
+flag = 0
+flag2 = 0
 
 def init():
-  global s
-  s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-  host = socket.gethostname()
-  port = 12346
-
-  try:
-    s.connect((host,port)) # 定义连接
-  except Exception as e:
-    print("连接服务器失败",e)
-    exit(-1)
+    global s
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    host = socket.gethostname()
+    port = 12346
+    try:
+        s.connect((host, port))  # 定义连接
+        print(s)
+    except Exception as e:
+        print("连接服务器失败", e)
+        exit(-1)
 
 def login():
-  # 发送登陆信息
-  name = input("input name: ")
-  password = input("input password: ") # python 的getpass模块只能在指定ide中才起作用，故这里依然明文显示
-  client_info = json.dumps({'name':name, 'password':password}).encode('utf-8')
-  s.send(client_info)
-
-  msg = s.recv(1024).decode(encoding='utf-8') # 大坑！！！！！！！！！！！
-  # 只会接收一次，用msg去装载，如果先接受信息，再去赋值给msg那么就赋值失败了
-  # 接收TCP数据，数据以字符串形式返回，参数指定要接收的最大数据量(BUFSIZE)
-  print(msg)
-
-  if msg == 'name or password is incorrect!':
-    exit()
-
-  s.sendall('Connected!'.encode(encoding='utf-8'))
+    # 发送登陆信息
+    global flag
+    init()
+    name = var_usr_name.get()
+    print('type:', type(name))
+    password = var_usr_pwd.get()
+    client_info = json.dumps({'name': name, 'password': password}).encode('utf-8')
+    s.send(client_info)
+    msg = s.recv(1024).decode(encoding='utf-8')  # 大坑！！！！！！！！！！！
+    # 只会接收一次，用msg去装载，如果先接受信息，再去赋值给msg那么就赋值失败了
+    # 接收TCP数据，数据以字符串形式返回，参数指定要接收的最大数据量(BUFSIZE)
+    print(msg)
+    if msg == 'name or password is incorrect!':
+        tk.Label(window, text='用户名或密码错误!', font=('Arial', 14)).place(x=110, y=190)
+        var_usr_name.set('')
+        var_usr_pwd.set('')
+        flag = 0
+    else:
+        tk.Label(window, text='登陆成功!', font=('Arial', 14)).place(x=120, y=190)
+        window.destroy()
+        flag = 1
 
 
 def get_message():
+    global flag2
+    while True:
+        data = s.recv(1024).decode(encoding='utf-8')
+        print('get message:', data)
+        if data == 'close':
+            flag2 = 2
+            gui.Text.insert('end', 'The server has closed you!'+ '\n')
+            gui.Text.see('end')
+            messagebox.showinfo('提示', '服务器已关闭你的客户端！')
+            s.close()
+        elif data == 'the server has closed!':
+            flag2 = 1
+            gui.Text.insert('end', 'The server has closed!' + '\n')
+            gui.Text.see('end')
+            messagebox.showinfo('提示', '服务器已关闭！')
+        else:
+            gui.Text.insert('end', 'message from the server : ' + data + '\n')
+            gui.Text.see('end')
 
-  while True: # 不断接收消息
-    data = s.recv(1024).decode(encoding='utf-8')
-    if data == 'close':
-      print('The server closed your client!')
+class GUI:
+  def __init__(self, root):
+    self.root = root
+    self.Text = tk.Text(self.root, height=15, width=50)
+    self.Text.pack()
+    self.Text.insert('end','Connected Successfully!'+'\n')
+    tk.Label(self.root, text='消息:', font=('Arial', 10)).place(x=22, y=210)
+    self.msg = tk.StringVar()
+    self.entry = tk.Entry(self.root, width=40,textvariable=self.msg).place(x=75, y=210)
+    self.btn_send = tk.Button(self.root, width=30, text='发送', command=self.send)
+    self.btn_send.place(x=80, y=240)
+    self.btn_close = tk.Button(self.root, width=30, text='关闭客户端', command=self.close)
+    self.btn_close.place(x=80, y=280)
+
+  def send(self):
+    if flag2 == 0:
+        send_data = self.msg.get()
+        self.Text.insert('end', 'message send to the server : ' + send_data + '\n')
+        self.Text.see('end')
+        s.send(send_data.encode())
+        self.msg.set('')
+    elif flag2 == 1:
+        self.msg.set('')
+        tk.messagebox.showerror('错误', '服务器已关闭！')
+    elif flag2 == 2:
+        self.msg.set('')
+        tk.messagebox.showerror('错误', '服务器已关闭你的客户端！')
+
+
+
+  def close(self):
+      send_data = 'close'
+      s.send(send_data.encode())
       s.close()
       exit()
-    if not data:
-      break
-    print("\nA message from server:", end=' ')
-    print(data)
-    break
 
-def gui(): # 随便写的，没什么用
-
-  app = wx.App(False)
-  frame = wx.Frame(None, title="Login Page", size=(410, 335))
-  frame.Show()
-
-  name = wx.TextCtrl(frame, pos=(35, 5), size=(210, 25))
-  password = wx.TextCtrl(frame, pos=(35, 35), size=(210, 25))
-  login_Button = wx.Button(frame, label='login', pos=(65, 80), size=(80, 25))
-  login_Button.Bind(wx.EVT_BUTTON, login(name.GetValue(),password.GetValue()))
-
-  app.MainLoop()
-
-def menu():
-
-  print('''
-                  |----------------------------------|
-                  | input 1:Waiting for message...   |
-                  | input 2:Sending message to client|
-                  | input 3:Close server             |
-                  |----------------------------------|
-      ''')
-
-  while True:
-    n = input(">>>")
-    if n == '1':
-      get_message()
-    elif n == '2':  # 发送exit可自动退出
-      message = input("input you message here: ")
-      s.sendall(message.encode(encoding='utf-8'))
-      data = s.recv(1024).decode(encoding='utf-8')
-      if data == 'close':
-        print('The server closed your client!')
-        s.close()
-        exit()
-    elif n == '3':
-      print("The connection is closed")
-      s.close()
-      exit()
-
+def createGUI():
+  global gui
+  root = tk.Tk()
+  gui = GUI(root)
+  root.geometry('400x320')
+  root.title('客户端')
+  root.mainloop()
 
 if __name__ == '__main__':
+    window = tk.Tk()
+    window.title('客户登陆窗口')
+    window.geometry('400x400')
 
-  init()
-  login()
+    tk.Label(window, text='User name:', font=('Arial', 14)).place(x=30, y=115)
+    tk.Label(window, text='Password:', font=('Arial', 14)).place(x=30, y=155)
 
-  thread1 = threading.Thread(target=get_message)
-  thread2 = threading.Thread(target=menu)
+    var_usr_name = tk.StringVar()
+    entry_usr_name = tk.Entry(window, textvariable=var_usr_name, font=('Arial', 14))
+    entry_usr_name.place(x=140, y=120)
 
-  thread1.start()
-  thread2.start()
+    var_usr_pwd = tk.StringVar()
+    entry_usr_pwd = tk.Entry(window, textvariable=var_usr_pwd, font=('Arial', 14), show='*')
+    entry_usr_pwd.place(x=140, y=160)
+
+    btn_login = tk.Button(window, width=30, text='Login', command=login)
+    btn_login.place(x=90, y=220)
+    window.mainloop()
+
+    if (flag == 1):
+        t1 = threading.Thread(target=get_message, args=(), name='get_message')
+        t2 = threading.Thread(target=createGUI, args=(), name='gui')
+        t1.start()
+        t2.start()
