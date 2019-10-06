@@ -6,7 +6,7 @@
 int main()
 {
     printf("my pid is %d,my father's pid is %d\n",getpid(),getppid());
-    for (int i = 0;i < 3;i++) //一共有1 + 2 + 4 + 8 = 15个进程
+    for (int i = 0;i < 3;i++)           //一共有1 + 2 + 4 + 8 = 15个进程
     {
         if (fork() == 0)
             printf("%d pid = %d ppid = %d\n",i,getpid(),getppid());
