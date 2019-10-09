@@ -79,8 +79,6 @@ def handle_message(client,address):
     print("\nSome mistakes: ",e)
 
 
-
-
 def client_close():
   close_port = imf.get()
   msg = 'close'
@@ -91,8 +89,8 @@ def client_close():
       index = i
       break
   connection_pool[int(index)].sendall(msg.encode(encoding='utf8'))
-  del connection_pool[index]
-  del client_index_list[index]  # delete the port
+  del connection_pool[int(index)]
+  del client_index_list[int(index)]  # delete the port
   t1.insert('end','The server has closed '+str(close_port)+'\n')
   t1.see('end')
   imf.set('')
