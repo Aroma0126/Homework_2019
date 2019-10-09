@@ -70,10 +70,6 @@ def handle_message(client,address):
           client_index_list.remove(address[1])
           break
         if len(data) != 0 and data != b'exit':
-          print("\nThe client host: ", address,end='')
-          print(" Client message: ", data.decode(encoding='utf-8'))
-          print(type(data))
-          print('type:',type(t))
           t1.insert('end', 'message from '+str(address[1])+' : '+t+'\n')
           t1.see('end')
     else:
