@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/ClionProjects/Homework_2019/algorithm_ex/linuxtest.c
+stdio.h
+C:/ClionProjects/Homework_2019/algorithm_ex/stdio.h
+time.h
+C:/ClionProjects/Homework_2019/algorithm_ex/time.h
+stdlib.h
+C:/ClionProjects/Homework_2019/algorithm_ex/stdlib.h
+unistd.h
+C:/ClionProjects/Homework_2019/algorithm_ex/unistd.h
+

@@ -122,32 +122,32 @@ algorithm_ex/fast:
 	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/build
 .PHONY : algorithm_ex/fast
 
-ex1.obj: ex1.cpp.obj
+homework_2-15.obj: homework_2-15.cpp.obj
 
-.PHONY : ex1.obj
+.PHONY : homework_2-15.obj
 
 # target to build an object file
-ex1.cpp.obj:
-	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/ex1.cpp.obj
-.PHONY : ex1.cpp.obj
+homework_2-15.cpp.obj:
+	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/homework_2-15.cpp.obj
+.PHONY : homework_2-15.cpp.obj
 
-ex1.i: ex1.cpp.i
+homework_2-15.i: homework_2-15.cpp.i
 
-.PHONY : ex1.i
+.PHONY : homework_2-15.i
 
 # target to preprocess a source file
-ex1.cpp.i:
-	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/ex1.cpp.i
-.PHONY : ex1.cpp.i
+homework_2-15.cpp.i:
+	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/homework_2-15.cpp.i
+.PHONY : homework_2-15.cpp.i
 
-ex1.s: ex1.cpp.s
+homework_2-15.s: homework_2-15.cpp.s
 
-.PHONY : ex1.s
+.PHONY : homework_2-15.s
 
 # target to generate assembly for a file
-ex1.cpp.s:
-	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/ex1.cpp.s
-.PHONY : ex1.cpp.s
+homework_2-15.cpp.s:
+	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/homework_2-15.cpp.s
+.PHONY : homework_2-15.cpp.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... algorithm_ex
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... ex1.obj
-	@echo ... ex1.i
-	@echo ... ex1.s
+	@echo ... homework_2-15.obj
+	@echo ... homework_2-15.i
+	@echo ... homework_2-15.s
 .PHONY : help
 
 
