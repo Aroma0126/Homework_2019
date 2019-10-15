@@ -70,10 +70,6 @@ def handle_message(client,address):
           client_index_list.remove(address[1])
           break
         if len(data) != 0 and data != b'exit':
-          print("\nThe client host: ", address,end='')
-          print(" Client message: ", data.decode(encoding='utf-8'))
-          print(type(data))
-          print('type:',type(t))
           t1.insert('end', 'message from '+str(address[1])+' : '+t+'\n')
           t1.see('end')
     else:
@@ -81,8 +77,6 @@ def handle_message(client,address):
       client.close()
   except Exception as e:
     print("\nSome mistakes: ",e)
-
-
 
 
 def client_close():
@@ -95,8 +89,8 @@ def client_close():
       index = i
       break
   connection_pool[int(index)].sendall(msg.encode(encoding='utf8'))
-  del connection_pool[index]
-  del client_index_list[index]  # delete the port
+  del connection_pool[int(index)]
+  del client_index_list[int(index)]  # delete the port
   t1.insert('end','The server has closed '+str(close_port)+'\n')
   t1.see('end')
   imf.set('')

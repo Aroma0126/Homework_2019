@@ -56,13 +56,15 @@ class GUI:
     self.Text = tk.Text(self.root, height=15, width=50)
     self.Text.pack()
     self.Text.insert('end','Connected Successfully!'+'\n')
-    tk.Label(self.root, text='消息:', font=('Arial', 10)).place(x=22, y=210)
+    addr = s.getsockname()
+    tk.Label(self.root, text='端口号 : ' + str(addr[1]), font=('Arial', 10)).place(x=22, y=210)
+    tk.Label(self.root, text='消息:', font=('Arial', 10)).place(x=22, y=240)
     self.msg = tk.StringVar()
-    self.entry = tk.Entry(self.root, width=40,textvariable=self.msg).place(x=75, y=210)
+    self.entry = tk.Entry(self.root, width=40,textvariable=self.msg).place(x=75, y=240)
     self.btn_send = tk.Button(self.root, width=30, text='发送', command=self.send)
-    self.btn_send.place(x=80, y=240)
-    self.btn_close = tk.Button(self.root, width=30, text='关闭客户端', command=lambda: self.close(root))
-    self.btn_close.place(x=80, y=280)
+    self.btn_send.place(x=80, y=270)
+    self.btn_close = tk.Button(self.root, width=30, text='关闭客户端', command=self.close)
+    self.btn_close.place(x=80, y=310)
 
   def send(self):
     if flag2 == 0:
@@ -79,18 +81,17 @@ class GUI:
       tk.messagebox.showwarning('警告','服务器已关闭你的客户端！')
 
 
-  def close(self,root):
+  def close(self):
       send_data = 'close'
       s.sendto(send_data.encode(), (host, port))
       s.close()
-      root.destroy()
       exit()
 
 def createGUI():
   global gui
   root = tk.Tk()
   gui = GUI(root)
-  root.geometry('400x320')
+  root.geometry('400x350')
   root.title('客户端')
   root.mainloop()
 
@@ -100,8 +101,8 @@ if __name__ == '__main__':
   window.title('客户登陆窗口')
   window.geometry('400x400')
 
-  tk.Label(window, text='User name:', font=('Arial', 14)).place(x=30, y=115)
-  tk.Label(window, text='Password:', font=('Arial', 14)).place(x=30, y=155)
+  tk.Label(window, text='用户名:', font=('Arial', 14)).place(x=30, y=115)
+  tk.Label(window, text='密码:', font=('Arial', 14)).place(x=30, y=155)
 
   var_usr_name = tk.StringVar()
   entry_usr_name = tk.Entry(window, textvariable=var_usr_name, font=('Arial', 14))

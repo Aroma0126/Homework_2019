@@ -72,7 +72,7 @@ def get_mes():
                 break
         del connection_pool[index]
     else:
-      print("recieve from port: ",address[1],end=" ")
+      print("recieve from port: ",address[1])
       print("message is: ",data)
       t1.insert('end','message form port '+str(address[1])+' : '+string+'\n')
       t1.see('end')
@@ -127,6 +127,7 @@ def close():
 
 
 if __name__ == '__main__':
+
 
   init()
   thread = threading.Thread(target=get_mes)
