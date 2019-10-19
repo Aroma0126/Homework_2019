@@ -50,10 +50,6 @@ int main()
     //cin>>k;
     int n = pow(2,k);
 
-    /*int* a[n];
-    int b[n][n] = { 0 };
-    for(int i = 0; i < n; ++i){ a[i] = b[i]; }*/
-
     int *a[n];
     for(int i = 0;i < n;i++)   //给每行的数组分配一下空间
     {

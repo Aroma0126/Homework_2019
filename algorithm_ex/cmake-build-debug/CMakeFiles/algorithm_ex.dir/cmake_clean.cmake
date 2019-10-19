@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algorithm_ex.dir/homework_2-15.cpp.obj"
+  "CMakeFiles/algorithm_ex.dir/ex3.cpp.obj"
   "algorithm_ex.pdb"
   "algorithm_ex.exe"
   "algorithm_ex.exe.manifest"
