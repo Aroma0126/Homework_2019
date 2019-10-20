@@ -6,7 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/ClionProjects/Homework_2019/algorithm_ex/homework2-3.cpp
+C:/ClionProjects/Homework_2019/algorithm_ex/ex5.cpp
+cstdio
+-
+cstring
+-
+algorithm
+-
 iostream
 -
 
