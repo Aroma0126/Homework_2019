@@ -12,8 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52d76665-52ae-432f-a071-af224c28f9ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ex4.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homework2-16.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex4/BinaryTree.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex4/MinHeap.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OS_homeworks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OS_homeworks/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OS_homeworks/myworks/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../OS_homeworks/myworks/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OS_homeworks/myworks/homework_1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../OS_homeworks/myworks/homework_1.cpp" afterDir="false" />
@@ -25,18 +25,14 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/ex3.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/homework_2-15.cpp.obj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/objects1.rsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/algorithm_ex.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/algorithm_ex.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/algorithm_ex.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/algorithm_ex.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ex3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework2-8.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/homework2-8.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ex4/ex4.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework2-9.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/homework2-9.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework_2-15.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/homework_2-15.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/temp.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,6 +44,20 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -55,76 +65,76 @@
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/temp.cpp">
+        <entry file="file://$PROJECT_DIR$/homework2-16.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#41#59#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="198">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homework2-3.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1314">
+            <state relative-caret-position="210">
               <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ex2.cpp">
+        <entry file="file://$PROJECT_DIR$/ex4/BinaryTree.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ex3.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="350">
+              <caret line="212" lean-forward="true" selection-start-line="212" selection-end-line="212" />
               <folding>
-                <element signature="e#52#71#0" expanded="true" />
+                <element signature="e#159#168#0" expanded="true" />
+                <element signature="e#684#693#0" expanded="true" />
+                <element signature="e#1275#1284#0" expanded="true" />
+                <element signature="e#1341#1350#0" expanded="true" />
+                <element signature="e#1394#1403#0" expanded="true" />
+                <element signature="e#1469#1478#0" expanded="true" />
+                <element signature="e#1542#1551#0" expanded="true" />
+                <element signature="e#1619#1628#0" expanded="true" />
+                <element signature="e#1704#1713#0" expanded="true" />
+                <element signature="e#1795#1804#0" expanded="true" />
+                <element signature="e#1871#1880#0" expanded="true" />
+                <element signature="e#2051#2060#0" expanded="true" />
+                <element signature="e#2228#2237#0" expanded="true" />
+                <element signature="e#2411#2420#0" expanded="true" />
+                <element signature="e#2591#2600#0" expanded="true" />
+                <element signature="e#2831#2840#0" expanded="true" />
+                <element signature="e#3015#3024#0" expanded="true" />
+                <element signature="e#3305#3314#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ex4.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/homework2-8.cpp">
+        <entry file="file://$PROJECT_DIR$/ex4/MinHeap.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/homework2-9.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+            <state relative-caret-position="314">
+              <caret line="135" column="1" selection-start-line="135" selection-start-column="1" selection-end-line="135" selection-end-column="1" />
+              <folding>
+                <element signature="e#152#161#0" expanded="true" />
+                <element signature="e#610#619#0" expanded="true" />
+                <element signature="e#719#728#0" expanded="true" />
+                <element signature="e#784#793#0" expanded="true" />
+                <element signature="e#1105#1114#0" expanded="true" />
+                <element signature="e#1507#1516#0" expanded="true" />
+                <element signature="e#1707#1716#0" expanded="true" />
+                <element signature="e#1885#1894#0" expanded="true" />
+                <element signature="e#1951#1960#0" expanded="true" />
+                <element signature="e#2034#2043#0" expanded="true" />
+                <element signature="e#2122#2131#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,20 +155,23 @@
         <option value="$PROJECT_DIR$/homework2-3.cpp" />
         <option value="$PROJECT_DIR$/homework2-4.cpp" />
         <option value="$PROJECT_DIR$/ex2.cpp" />
-        <option value="$PROJECT_DIR$/homework_2-15.cpp" />
         <option value="$PROJECT_DIR$/homework2-16.cpp" />
         <option value="$PROJECT_DIR$/homework2-8.cpp" />
-        <option value="$PROJECT_DIR$/homework2-9.cpp" />
         <option value="$PROJECT_DIR$/temp.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/ex3.cpp" />
         <option value="$PROJECT_DIR$/ex4.cpp" />
+        <option value="$PROJECT_DIR$/ex4/BinaryTree.h" />
+        <option value="$PROJECT_DIR$/ex4/MinHeap.h" />
+        <option value="$PROJECT_DIR$/ex4/ex4.cpp" />
+        <option value="$PROJECT_DIR$/homework_2-15.cpp" />
+        <option value="$PROJECT_DIR$/homework2-9.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="442" />
-    <option name="width" value="1490" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="441" />
+    <option name="width" value="1491" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -175,6 +188,11 @@
               <item name="algorithm_ex" type="b2602c69:ProjectViewProjectNode" />
               <item name="algorithm_ex" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="algorithm_ex" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithm_ex" type="462c0819:PsiDirectoryNode" />
+              <item name="ex4" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -187,6 +205,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../OS_homeworks/myworks" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ClionProjects\Homework_2019\algorithm_ex\ex4" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -248,12 +271,13 @@
       <workItem from="1571129128019" duration="10526000" />
       <workItem from="1571212724899" duration="948000" />
       <workItem from="1571216875298" duration="1495000" />
-      <workItem from="1571457683415" duration="9516000" />
+      <workItem from="1571457683415" duration="10295000" />
+      <workItem from="1571551358656" duration="5976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88585000" />
+    <option name="totallyTimeSpent" value="95340000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -268,26 +292,26 @@
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.024252223" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19320938" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.94755244" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5034965" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32342657" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42657343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32867134" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.6923077" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.8496503" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.6555944" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.13811189" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32867134" />
       <window_info anchor="bottom" id="CMake" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32983023" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,11 +320,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/homework_2-15.cpp</url>
-          <line>24</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/ex3.cpp</url>
           <line>102</line>
@@ -311,18 +330,34 @@
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="m" />
+        <watch expression="a" language="ObjectiveC" />
+        <watch expression="a" />
       </configuration>
     </watches-manager>
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>a</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>a</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>a[2]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/linuxtest.c" />
-    <entry file="file://$PROJECT_DIR$/homework1-2.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_string.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -344,12 +379,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ex2.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex3.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#52#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework1-2.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex4/BinaryTree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="212" lean-forward="true" selection-start-line="212" selection-end-line="212" />
+          <folding>
+            <element signature="e#159#168#0" expanded="true" />
+            <element signature="e#684#693#0" expanded="true" />
+            <element signature="e#1275#1284#0" expanded="true" />
+            <element signature="e#1341#1350#0" expanded="true" />
+            <element signature="e#1394#1403#0" expanded="true" />
+            <element signature="e#1469#1478#0" expanded="true" />
+            <element signature="e#1542#1551#0" expanded="true" />
+            <element signature="e#1619#1628#0" expanded="true" />
+            <element signature="e#1704#1713#0" expanded="true" />
+            <element signature="e#1795#1804#0" expanded="true" />
+            <element signature="e#1871#1880#0" expanded="true" />
+            <element signature="e#2051#2060#0" expanded="true" />
+            <element signature="e#2228#2237#0" expanded="true" />
+            <element signature="e#2411#2420#0" expanded="true" />
+            <element signature="e#2591#2600#0" expanded="true" />
+            <element signature="e#2831#2840#0" expanded="true" />
+            <element signature="e#3015#3024#0" expanded="true" />
+            <element signature="e#3305#3314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex4/ex4.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-856">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#99#122#0" expanded="true" />
+            <element signature="e#209#221#0" expanded="true" />
+            <element signature="e#246#258#0" expanded="true" />
+            <element signature="e#313#325#0" expanded="true" />
+            <element signature="e#982#994#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/homework_2-15.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="234">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
           <folding>
             <element signature="e#50#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework2-8.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework2-9.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex4/MinHeap.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="135" column="1" selection-start-line="135" selection-start-column="1" selection-end-line="135" selection-end-column="1" />
+          <folding>
+            <element signature="e#152#161#0" expanded="true" />
+            <element signature="e#610#619#0" expanded="true" />
+            <element signature="e#719#728#0" expanded="true" />
+            <element signature="e#784#793#0" expanded="true" />
+            <element signature="e#1105#1114#0" expanded="true" />
+            <element signature="e#1507#1516#0" expanded="true" />
+            <element signature="e#1707#1716#0" expanded="true" />
+            <element signature="e#1885#1894#0" expanded="true" />
+            <element signature="e#1951#1960#0" expanded="true" />
+            <element signature="e#2034#2043#0" expanded="true" />
+            <element signature="e#2122#2131#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -361,65 +502,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/temp.cpp">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#41#59#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/homework2-3.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
+        <state relative-caret-position="210">
           <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homework2-8.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homework2-9.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ex2.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ex3.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#52#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ex4.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
