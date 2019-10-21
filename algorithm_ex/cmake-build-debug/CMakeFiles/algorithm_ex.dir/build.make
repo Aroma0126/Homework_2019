@@ -56,27 +56,27 @@ include CMakeFiles/algorithm_ex.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/algorithm_ex.dir/flags.make
 
-CMakeFiles/algorithm_ex.dir/ex6.cpp.obj: CMakeFiles/algorithm_ex.dir/flags.make
-CMakeFiles/algorithm_ex.dir/ex6.cpp.obj: ../ex6.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\ClionProjects\Homework_2019\algorithm_ex\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/algorithm_ex.dir/ex6.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\algorithm_ex.dir\ex6.cpp.obj -c C:\ClionProjects\Homework_2019\algorithm_ex\ex6.cpp
+CMakeFiles/algorithm_ex.dir/work2-11.cpp.obj: CMakeFiles/algorithm_ex.dir/flags.make
+CMakeFiles/algorithm_ex.dir/work2-11.cpp.obj: ../work2-11.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\ClionProjects\Homework_2019\algorithm_ex\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/algorithm_ex.dir/work2-11.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\algorithm_ex.dir\work2-11.cpp.obj -c C:\ClionProjects\Homework_2019\algorithm_ex\work2-11.cpp
 
-CMakeFiles/algorithm_ex.dir/ex6.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithm_ex.dir/ex6.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\ClionProjects\Homework_2019\algorithm_ex\ex6.cpp > CMakeFiles\algorithm_ex.dir\ex6.cpp.i
+CMakeFiles/algorithm_ex.dir/work2-11.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithm_ex.dir/work2-11.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\ClionProjects\Homework_2019\algorithm_ex\work2-11.cpp > CMakeFiles\algorithm_ex.dir\work2-11.cpp.i
 
-CMakeFiles/algorithm_ex.dir/ex6.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithm_ex.dir/ex6.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\ClionProjects\Homework_2019\algorithm_ex\ex6.cpp -o CMakeFiles\algorithm_ex.dir\ex6.cpp.s
+CMakeFiles/algorithm_ex.dir/work2-11.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithm_ex.dir/work2-11.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\ClionProjects\Homework_2019\algorithm_ex\work2-11.cpp -o CMakeFiles\algorithm_ex.dir\work2-11.cpp.s
 
 # Object files for target algorithm_ex
 algorithm_ex_OBJECTS = \
-"CMakeFiles/algorithm_ex.dir/ex6.cpp.obj"
+"CMakeFiles/algorithm_ex.dir/work2-11.cpp.obj"
 
 # External object files for target algorithm_ex
 algorithm_ex_EXTERNAL_OBJECTS =
 
-algorithm_ex.exe: CMakeFiles/algorithm_ex.dir/ex6.cpp.obj
+algorithm_ex.exe: CMakeFiles/algorithm_ex.dir/work2-11.cpp.obj
 algorithm_ex.exe: CMakeFiles/algorithm_ex.dir/build.make
 algorithm_ex.exe: CMakeFiles/algorithm_ex.dir/linklibs.rsp
 algorithm_ex.exe: CMakeFiles/algorithm_ex.dir/objects1.rsp

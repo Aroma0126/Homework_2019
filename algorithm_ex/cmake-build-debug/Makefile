@@ -122,32 +122,32 @@ algorithm_ex/fast:
 	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/build
 .PHONY : algorithm_ex/fast
 
-ex6.obj: ex6.cpp.obj
+work2-11.obj: work2-11.cpp.obj
 
-.PHONY : ex6.obj
+.PHONY : work2-11.obj
 
 # target to build an object file
-ex6.cpp.obj:
-	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/ex6.cpp.obj
-.PHONY : ex6.cpp.obj
+work2-11.cpp.obj:
+	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/work2-11.cpp.obj
+.PHONY : work2-11.cpp.obj
 
-ex6.i: ex6.cpp.i
+work2-11.i: work2-11.cpp.i
 
-.PHONY : ex6.i
+.PHONY : work2-11.i
 
 # target to preprocess a source file
-ex6.cpp.i:
-	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/ex6.cpp.i
-.PHONY : ex6.cpp.i
+work2-11.cpp.i:
+	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/work2-11.cpp.i
+.PHONY : work2-11.cpp.i
 
-ex6.s: ex6.cpp.s
+work2-11.s: work2-11.cpp.s
 
-.PHONY : ex6.s
+.PHONY : work2-11.s
 
 # target to generate assembly for a file
-ex6.cpp.s:
-	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/ex6.cpp.s
-.PHONY : ex6.cpp.s
+work2-11.cpp.s:
+	$(MAKE) -f CMakeFiles\algorithm_ex.dir\build.make CMakeFiles/algorithm_ex.dir/work2-11.cpp.s
+.PHONY : work2-11.cpp.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... algorithm_ex
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... ex6.obj
-	@echo ... ex6.i
-	@echo ... ex6.s
+	@echo ... work2-11.obj
+	@echo ... work2-11.i
+	@echo ... work2-11.s
 .PHONY : help
 
 
