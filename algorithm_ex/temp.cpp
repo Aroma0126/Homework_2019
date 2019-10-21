@@ -71,3 +71,36 @@ int main()
 
 */
 
+#include <iostream>
+#include <vector>
+#include <string>
+#include <cstring>
+using namespace std;
+
+vector<string> vec(10);
+// 利用array存储这个半数集
+int array[100] = {0};
+
+
+/*char *ToChar(int a)
+{
+    char *c;
+    c = a + 48;
+    return c;
+}*/
+
+int main()
+{
+    int n = 6;
+    string str = to_string(n);
+    string str_1 = "444";
+    cout<<stoi(str_1);
+    cout<<atoi(str_1[2].c_str(q));
+    /*vec[0] = str;
+    cout<<vec[0]<<endl;
+    str_1.append(str);
+    vec[1] = str_1;
+    cout<<vec[1]<<endl;*/
+
+    return 0;
+}

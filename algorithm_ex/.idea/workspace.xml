@@ -12,8 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52d76665-52ae-432f-a071-af224c28f9ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ex7.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work2-11.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work2-3.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work2-9.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OS_homeworks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OS_homeworks/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OS_homeworks/myworks/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../OS_homeworks/myworks/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OS_homeworks/myworks/homework_1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../OS_homeworks/myworks/homework_1.cpp" afterDir="false" />
@@ -25,13 +25,14 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/ex6.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/homework2-8.cpp.obj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/temp.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/algorithm_ex.dir/work2-11.cpp.obj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/algorithm_ex.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/algorithm_ex.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/algorithm_ex.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/algorithm_ex.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2-8.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/homework2-8.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/temp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/temp.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -61,38 +62,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ex7.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/temp.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/work2-11.cpp">
+        <entry file="file://$PROJECT_DIR$/work2-3.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5">
-              <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+            <state relative-caret-position="134">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="e#53#72#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,7 +91,6 @@
         <option value="$PROJECT_DIR$/homework2-4.cpp" />
         <option value="$PROJECT_DIR$/ex2.cpp" />
         <option value="$PROJECT_DIR$/homework2-16.cpp" />
-        <option value="$PROJECT_DIR$/homework2-8.cpp" />
         <option value="$PROJECT_DIR$/ex3.cpp" />
         <option value="$PROJECT_DIR$/ex4/BinaryTree.h" />
         <option value="$PROJECT_DIR$/ex4/MinHeap.h" />
@@ -127,13 +103,16 @@
         <option value="$PROJECT_DIR$/ex4.cpp" />
         <option value="$PROJECT_DIR$/ex6.cpp" />
         <option value="$PROJECT_DIR$/ex7.cpp" />
+        <option value="$PROJECT_DIR$/work2-11.cpp" />
+        <option value="$PROJECT_DIR$/work2-9.cpp" />
+        <option value="$PROJECT_DIR$/homework2-8.cpp" />
         <option value="$PROJECT_DIR$/temp.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/work2-11.cpp" />
+        <option value="$PROJECT_DIR$/work2-3.cpp" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="345" />
     <option name="width" value="1584" />
     <option name="height" value="1056" />
@@ -234,12 +213,12 @@
       <workItem from="1571457683415" duration="10295000" />
       <workItem from="1571551358656" duration="17835000" />
       <workItem from="1571636631055" duration="6579000" />
-      <workItem from="1571651388523" duration="2656000" />
+      <workItem from="1571651388523" duration="8769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116434000" />
+    <option name="totallyTimeSpent" value="122547000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -252,21 +231,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21907842" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06790622" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.9195804" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.26398602" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4995958" weight="0.22727273" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.052447554" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32867134" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.43881118" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.36713287" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.21328671" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.08041958" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5004042" side_tool="true" weight="0.6678322" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32867134" />
       <window_info anchor="bottom" id="CMake" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -306,6 +286,11 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>vec</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>buffer</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -344,13 +329,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/linuxtest.c" />
-    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_string.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="4988" selection-start-line="4988" selection-end-line="4988" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homework1-3.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -396,13 +374,6 @@
           <folding>
             <element signature="e#50#69#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homework2-8.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -454,13 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homework2-3.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/work2-2.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1314">
@@ -488,6 +452,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/work2-11.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work2-9.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework2-8.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ex7.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -495,24 +480,114 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/homework2-3.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1314">
+          <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/temp.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="242">
+          <caret line="97" column="31" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
+          <folding>
+            <element signature="e#1056#1075#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/work2-11.cpp">
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/type_traits.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        <state relative-caret-position="116">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_iterator_base_types.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="204" selection-start-line="204" selection-end-line="204" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_iterator_base_funcs.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="139" selection-start-line="139" selection-end-line="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_string.tcc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="232" selection-start-line="232" selection-end-line="232" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="215" selection-start-line="215" selection-end-line="215" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/string_conversions.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/move.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/vector.tcc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="410" selection-start-line="410" selection-end-line="410" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/alloc_traits.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="475" selection-start-line="475" selection-end-line="475" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/ext/new_allocator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="655" selection-start-line="655" selection-end-line="655" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work2-3.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#53#72#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

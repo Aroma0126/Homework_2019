@@ -28,8 +28,16 @@ void swap_sub_buffer(int a[],int k)
 
 int main()
 {
-    int a[10] = {1,2,3,4,5,6,7,8,9,10};
-    int k = 5;
+    int n,x,k;
+    int a[100];
+    cout<<"input the size of array and the k: "<<endl;
+    cin>>n>>k;
+    cout<<"input every element in array: "<<endl;
+    for (int i = 0;i < n;i++)
+    {
+        cin>>x;
+        a[i] = x;
+    }
     swap_sub_buffer(a,k);
 }
 
