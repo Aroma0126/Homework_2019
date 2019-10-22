@@ -72,9 +72,7 @@ int main()
 {
     int m,n,number;
     cin>>number;
-
     string x,y;
-
     for (int no = 0;no < number;no++)
     {
 
@@ -95,21 +93,17 @@ int main()
                 b[i][j] = 0;
         }
 
-
-
-
-
         Lcs_length(m,n,x,y,c,b);
-        //LCS(m + 1,n + 1,x,b);
 
+        // 定义结果子序列
         string re;
+        // 以两个序列的最后一位为起点，倒序检索
         for(int i = m,j = n;i >= 0 && j >= 0; )
         {
             if(b[i][j] == 1)
-            {
+            {// 对应第一类情况
                 i--;
                 j--;
-                //cout<<x[i]<<" ";
                 re = re + x[i];
             }
             else if(b[i][j] == 2)
@@ -142,9 +136,6 @@ BDCABA
 8 9
 baababab
 ababbabba
-
-
-
 
 
  **/
