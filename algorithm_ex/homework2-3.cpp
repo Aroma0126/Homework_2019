@@ -9,67 +9,54 @@
 #include <iostream>
 using namespace std;
 
-// 2 4 6 8 10
-// 0 1 2 3 4
+// 2 4 6 8 10 12 13 14 14 17
+// 0 1 2 3 4  5  6  7  8  9
 
-void MyBinarySearch(int a[],int left,int right,int &x)
+void MyBinarySearch (int key, int array[], int n)
 {
-    // i,j 两个位置 定义为-1就是没找到的意思
     int i,j;
-    int mid = (left + right)/2;
-    if ((right - left) == 1) // 只剩下一个元素了
-    {
-        if (x == a[left])
-            i = j = left;
-        else if (x == a[right])
-            i = j = right;
-        else if ((x < a[right])&&(x > a[left]))
-        {
-            i = left;
-            j = right;
-        }
-        else if (x < a[left])
-        {
-            i = -1;
-            j = left;
-        }
-        else if (x > a[right])
-        {
-            i = right;
-            j = -1;
-        }
-        cout<<"i = "<<i<<" j = "<<j<<endl;
-    }
-    else
-    {
-        if (x == a[mid])
-        {
+    int l = 0, r = n - 1, mid = -1;
+    while (l < r) {
+        mid = (l + r) / 2;
+        if (key == array[mid]) {
             i = j = mid;
-            cout<<"i = "<<i<<" j = "<<j<<endl;
-        }
-        else if (x < a[mid])
-        {
-            MyBinarySearch(a,left,mid,x);
-        }
-        else
-        {
-            MyBinarySearch(a,mid + 1,right,x);
+            cout<<"i = j = "<<i<<endl;
+            return;
+        } else if (key < array[mid]) {
+            r = mid - 1;
+        } else {
+            l = mid + 1;
         }
     }
+    //找不到元素,从mid-1开始向高index找符合条件的解
+    for (--mid; mid + 1 < n && array[mid + 1] < key; ++mid);
+    i = mid;
+    j = ++mid;
+    cout<<"i = "<<i<<"j = "<<j<<endl;
 }
 
 
 int main()
 {
-    int a[12];
-    a[0] = 0;
-    for (int i = 1;i < 12;i++)
+    int n;
+    cout<<"input the size of array:";
+    cin>>n;
+    int array[10000];
+    cout<<"input the array:"<<endl;
+    for (int i = 0;i < n;i++)
+        cin>>array[i];
+    int x;
+    cout<<"input x: ";
+
+    while(cin>>x)
     {
-        a[i] = a[i - 1] + 2;
-        cout<<"a["<<i<<"] "<<a[i]<<" ";
+        MyBinarySearch(x,array,n);
+        cout<<"input x: ";
     }
 
-    int x1 = -3;  // situation 1
-    int x2 = 3;   // situation 2
-    MyBinarySearch(a,0,8,x2);
 }
+/**
+10
+2 4 6 8 10 12 13 14 14 17
+3
+ **/

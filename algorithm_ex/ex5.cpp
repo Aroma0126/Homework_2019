@@ -3,7 +3,6 @@
 //
 /**Dijstra**/
 
-
 #include<cstdio>
 #include<cstring>
 #include<algorithm>
@@ -23,9 +22,9 @@ int n = 6 ,m = 0; // n个点，m条边
 void Init ()
 {
     memset(map,Inf,sizeof(map));
-    for(int i=1;i<=n;i++)
+    for(int i = 1;i <= n;i++)
     {
-        map[i][i]=0;
+        map[i][i] = 0;
     }
 }
 
@@ -108,8 +107,8 @@ int main()
         int p[500],k = 0,temp = end; //输出路径
         while(temp != start)
         {
-            p[k++] = temp;  //一开始p[0]=终点
-            temp = path[temp]; //倒着来，是谁推向temp的
+            p[k++] = temp;  //一开始p[0] = 终点
+            temp = path[temp]; //倒着来 推向temp的
         }
         p[k] = start;
         cout<<"the path is ";
@@ -119,10 +118,8 @@ int main()
         cnt++;
     }
 
-
     /*for (int i = 1;i <= 6;i++)
         cout<<dis[i]<<"\t";*/
-
 
     return 0;
 }
