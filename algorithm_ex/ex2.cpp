@@ -75,7 +75,6 @@ int main()
             p[i] = x;
         }
 
-        // https://www.cnblogs.com/chenhanwu/p/9897461.html
         int *m[n],*s[n];
         for(int i = 0;i < n;i++)   //给每行的数组分配一下空间
         {

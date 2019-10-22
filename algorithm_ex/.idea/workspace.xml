@@ -16,7 +16,8 @@
       <change beforePath="$PROJECT_DIR$/../OS_homeworks/myworks/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../OS_homeworks/myworks/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OS_homeworks/myworks/homework_1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../OS_homeworks/myworks/homework_1.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ex3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ex2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ex4.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,19 +46,33 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ex2.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ex3.cpp">
+        <entry file="file://$PROJECT_DIR$/ex4.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="194">
-              <caret line="131" column="1" lean-forward="true" selection-end-line="140" selection-end-column="4" />
-              <folding>
-                <element signature="e#52#71#0" expanded="true" />
-              </folding>
+              <caret line="157" column="1" lean-forward="true" selection-end-line="169" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>{</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>n</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -72,7 +87,6 @@
         <option value="$PROJECT_DIR$/linuxtest.c" />
         <option value="$PROJECT_DIR$/homework2-3.cpp" />
         <option value="$PROJECT_DIR$/homework2-4.cpp" />
-        <option value="$PROJECT_DIR$/ex2.cpp" />
         <option value="$PROJECT_DIR$/homework2-16.cpp" />
         <option value="$PROJECT_DIR$/ex4/BinaryTree.h" />
         <option value="$PROJECT_DIR$/ex4/MinHeap.h" />
@@ -82,7 +96,6 @@
         <option value="$PROJECT_DIR$/work2-2.cpp" />
         <option value="$PROJECT_DIR$/ex5.cpp" />
         <option value="$PROJECT_DIR$/ex4/ex4.cpp" />
-        <option value="$PROJECT_DIR$/ex4.cpp" />
         <option value="$PROJECT_DIR$/ex6.cpp" />
         <option value="$PROJECT_DIR$/ex7.cpp" />
         <option value="$PROJECT_DIR$/work2-11.cpp" />
@@ -92,6 +105,8 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/work2-3.cpp" />
         <option value="$PROJECT_DIR$/ex3.cpp" />
+        <option value="$PROJECT_DIR$/ex2.cpp" />
+        <option value="$PROJECT_DIR$/ex4.cpp" />
       </list>
     </option>
   </component>
@@ -197,12 +212,12 @@
       <workItem from="1571551358656" duration="17835000" />
       <workItem from="1571636631055" duration="6579000" />
       <workItem from="1571651388523" duration="9288000" />
-      <workItem from="1571717989892" duration="774000" />
+      <workItem from="1571717989892" duration="2880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123840000" />
+    <option name="totallyTimeSpent" value="125946000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -217,7 +232,7 @@
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11560226" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15763944" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -318,13 +333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ex2.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1566">
-          <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homework1-2.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-161">
@@ -397,13 +405,6 @@
           <folding>
             <element signature="e#55#72#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ex4.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3114">
-          <caret line="173" selection-start-line="173" selection-end-line="173" />
         </state>
       </provider>
     </entry>
@@ -555,11 +556,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ex3.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="131" column="1" lean-forward="true" selection-end-line="140" selection-end-column="4" />
+        <state relative-caret-position="49">
+          <caret line="129" column="3" lean-forward="true" selection-start-line="129" selection-start-column="3" selection-end-line="129" selection-end-column="3" />
           <folding>
             <element signature="e#52#71#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex2.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex4.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="157" column="1" lean-forward="true" selection-end-line="169" selection-end-column="4" />
         </state>
       </provider>
     </entry>

@@ -6,45 +6,30 @@
 #include <iostream>
 using namespace std;
 
-//最大字符编码数组长度
-#define MAXCODELEN 100
-//最大哈夫曼节点结构体数组个数
-#define MAXHAFF 100
-//最大哈夫曼编码结构体数组的个数
-#define MAXCODE 100
-#define MAXWEIGHT  10000;
-
 
 typedef struct Haffman
 {
-    //权重
     int weight;
-    //字符
     char ch;
-    //父节点
     int parent;
-    //左儿子节点
     int leftChild;
-    //右儿子节点
     int rightChild;
 }HaffmaNode;
 
 typedef struct Code
 {
-    //字符的哈夫曼编码的存储
-    int code[MAXCODELEN];
-    //从哪个位置开始
-    int start;
+    int code[100]; // 字符的哈夫曼编码的存储
+    int start; // 从哪个位置开始
 }HaffmaCode;
 
-HaffmaNode haffman[MAXHAFF];
-HaffmaCode code[MAXCODE];
+HaffmaNode haffman[100];
+HaffmaCode code[100];
 
-void buildHaffman(int all)
+void buildHaffman(int n)
 {
 
     //哈夫曼节点的初始化之前的工作, weight为0,parent,leftChile,rightChile都为-1
-    for (int i = 0; i < all * 2 - 1; ++i)
+    for (int i = 0; i < n * 2 - 1; ++i)
     {
         haffman[i].weight = 0;
         haffman[i].parent = -1;
@@ -52,18 +37,20 @@ void buildHaffman(int all)
         haffman[i].rightChild = -1;
     }
 
-    for (int i = 0; i < all; i++)
+    for (int i = 0; i < n; i++)
     {
         cin >> haffman[i].weight;
     }
-    //每次找出最小的权重的节点,生成新的节点,需要all - 1 次合并
+
+    //每次找出最小的权重的节点,生成新的节点,需要n - 1 次合并
     int x1, x2, w1, w2;
-    for (int i = 0; i < all - 1; ++i)
+    for (int i = 0; i < n - 1; ++i)
     {
         x1 = x2 = -1;
-        w1 = w2 = MAXWEIGHT;
-        //注意这里每次是all + i次里面便利
-        for (int j = 0; j < all + i; ++j)
+        w1 = w2 = 10000;
+
+        //注意这里每次是n + i次里面遍历
+        for (int j = 0; j < n + i; ++j)
         {
             //得到最小权重的节点
             if (haffman[j].parent == -1 && haffman[j].weight <= w1)
@@ -74,26 +61,24 @@ void buildHaffman(int all)
                 x1 = j;
                 w1 = haffman[j].weight;
             }
-                //这里用else if而不是if,是因为它们每次只选1个就可以了。
             else if(haffman[j].parent == -1 && haffman[j].weight < w2)
-            {
+            {//这里用else if而不是if,是因为它们每次只选1个就可以了。
                 x2 = j;
                 w2 = haffman[j].weight;
             }
         }
         //么次找到最小的两个节点后要记得合并成一个新的节点
-        /*haffman[all + i].leftChild = x1;
-        haffman[all + i].rightChild = x2;*/
-        haffman[all + i].leftChild = x2;
-        haffman[all + i].rightChild = x1;
-        haffman[all + i].weight = w1 + w2;
-        haffman[x1].parent = all + i;
-        haffman[x2].parent = all + i;
-        //std::cout << "x1 is" << x1 <<" x1 parent is"<<haffman[x1].parent<< " x2 is" << x2 <<" x2 parent is "<< haffman[x2].parent<< " new Node is " << all + i << "new weight is" << haffman[all + i].weight << std::endl;
+        /*haffman[n + i].leftChild = x1;
+        haffman[n + i].rightChild = x2;*/
+        haffman[n + i].leftChild = x2;
+        haffman[n + i].rightChild = x1;
+        haffman[n + i].weight = w1 + w2;
+        haffman[x1].parent = n + i;
+        haffman[x2].parent = n + i;
     }
 }
 //打印每个字符的哈夫曼编码
-void printCode(int all)
+void printCode(int n)
 {
     //保存当前叶子节点的字符编码
     HaffmaCode hCode;
@@ -102,9 +87,9 @@ void printCode(int all)
     //下标和叶子节点的编号
     int c;
     //遍历的总次数
-    for (int i = 0; i < all; ++i)
+    for (int i = 0; i < n; ++i)
     {
-        hCode.start = all - 1;
+        hCode.start = n - 1;
         c = i;
         curParent = haffman[i].parent;
         //遍历的条件是父节点不等于-1
@@ -115,19 +100,17 @@ void printCode(int all)
             if (haffman[curParent].leftChild == c)
             {
                 hCode.code[hCode.start] = 0;
-                //cout << "hCode.code[" << hCode.start << "] = 0" << endl;
             }
             else
             {
                 hCode.code[hCode.start] = 1;
-                //cout << "hCode.code[" << hCode.start << "] = 1" << endl;
             }
             hCode.start--;
             c = curParent;
             curParent = haffman[c].parent;
         }
         //把当前的叶子节点信息保存到编码结构体里面
-        for (int j = hCode.start + 1; j < all; ++j)
+        for (int j = hCode.start + 1; j < n; ++j)
         {
             code[i].code[j] = hCode.code[j];
         }
@@ -142,16 +125,18 @@ int main()
     cin>>cnt;
     while(cnt--)
     {
-        int all = 6;
-        cin>>all;
-        buildHaffman(all);
+        int n = 6;
+        cin>>n;
 
-        printCode(all);
+        buildHaffman(n);
+
+        printCode(n);
+
         cout<<"Case "<<k<<endl;
-        for (int i = 0; i < all; ++i)
+        for (int i = 0; i < n; ++i)
         {
             cout << haffman[i].weight << " ";
-            for (int j = code[i].start + 1; j < all; ++j)
+            for (int j = code[i].start + 1; j < n; ++j)
             {
                 cout << code[i].code[j];
             }
@@ -166,7 +151,6 @@ int main()
 
 
 /**
-
 
 2
 6
