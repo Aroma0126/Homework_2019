@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/ClionProjects/Homework_2019/algorithm_ex/work3-1.cpp" "C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/CMakeFiles/algorithm_ex.dir/work3-1.cpp.obj"
+  "C:/ClionProjects/Homework_2019/algorithm_ex/ex7.cpp" "C:/ClionProjects/Homework_2019/algorithm_ex/cmake-build-debug/CMakeFiles/algorithm_ex.dir/ex7.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
