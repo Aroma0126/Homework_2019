@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/ClionProjects/Homework_2019/algorithm_ex/ex7.cpp">
+		<Unit filename="C:/ClionProjects/Homework_2019/algorithm_ex/work_silver.cpp">
 			<Option target="algorithm_ex"/>
 		</Unit>
 		<Unit filename="C:/ClionProjects/Homework_2019/algorithm_ex/CMakeLists.txt">

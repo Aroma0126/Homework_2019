@@ -11,17 +11,18 @@
 #include <iostream>
 using namespace std;
 
-int n;
-int cur_weight;
-int best_weight;
-int rest_weight;
+int n; // 集装箱的个数
+int cur_weight; // 当前载重量
+int best_weight; // 最优载重量
+int rest_weight; // 剩余集装箱的重量
 int c1,c2;
 int x[100];
-int best_x[100];
+int best_x[100]; // 最优
 int weight[100];
 
 void BackTrack(int i)
 {
+    // 到达叶结点
     if (i > n)
     {
         if (cur_weight > best_weight)
@@ -32,7 +33,9 @@ void BackTrack(int i)
         }
         return;
     }
+    // 搜索子树
     rest_weight = rest_weight - weight[i];
+    // 搜索左子树
     if (cur_weight + weight[i] <= c1)
     {
         cur_weight = cur_weight + weight[i];
@@ -41,11 +44,13 @@ void BackTrack(int i)
         x[i] = 0;
         cur_weight = cur_weight - weight[i];
     }
+    // 搜索右子树
     if (cur_weight + rest_weight > best_weight)
     {
         x[i] = 0;
         BackTrack(i + 1);
     }
+    // 回溯
     rest_weight = rest_weight + weight[i];
 }
 

@@ -34,4 +34,51 @@ Times:4
  *
  * **/
 
+#include <iostream>
+using namespace std;
 
+// 我们可以考虑分成3堆
+// 13 = 4 4 5
+// 14 = 5 5 3
+
+int Calculate(int n)
+{
+    int sum = 0,x1,x2,x3;
+
+    while (n != 1&&n != 0)
+    {
+        if ((n + 1) % 3 == 0)
+        {
+            x1 = x2 = (n + 1)/3;
+            x3 = x1 - 1;
+            n = x1;
+        }
+        else if ((n - 1) % 3 == 0)
+        {
+            x1 = x2 = (n - 1)/3;
+            x3 = x1 + 1;
+            n = x3;
+        }
+        else
+            n = x1 = x2 = x3 = n/3;
+
+        //n = x1; // 我们总是假设假币在两堆之中
+        sum++;
+    }
+
+    return sum;
+}
+
+
+int main()
+{
+    int n;
+    while (1)
+    {
+        cin>>n;
+        if (n == 0) exit(0);
+        int re;
+        re = Calculate(n);
+        cout<<"Times: "<<re<<endl;
+    }
+}
