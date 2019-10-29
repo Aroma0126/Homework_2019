@@ -2,11 +2,6 @@
 // Created by 樊玲君 on 2019/10/21.
 //
 /**装载问题**/
-/**分支限界法
- *
- *
- *
- * **/
 
 #include <iostream>
 using namespace std;
@@ -21,6 +16,7 @@ int best_x[100]; // 最优
 int weight[100];
 
 void BackTrack(int i)
+
 {
     // 到达叶结点
     if (i > n)

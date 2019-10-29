@@ -19,16 +19,6 @@ int vis[1005],dis[1005];
 int path[500];
 int n = 6 ,m = 0; // n个点，m条边
 
-void Init ()
-{
-    memset(map,Inf,sizeof(map));
-    for(int i = 1;i <= n;i++)
-    {
-        map[i][i] = 0;
-    }
-}
-
-
 void Getmap()
 {
     int u,v,w;
@@ -96,7 +86,11 @@ int main()
     while (cin>>n)
     {
         int start = 1,end = 6;
-        Init();
+        memset(map,Inf,sizeof(map));
+        for(int i = 1;i <= n;i++)
+        {
+            map[i][i] = 0;
+        }
         Getmap();
         cin>>start>>end;
         Dijkstra(start);
