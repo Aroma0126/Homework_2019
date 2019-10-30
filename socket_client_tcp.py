@@ -20,7 +20,7 @@ def init():
         print("连接服务器失败", e)
         exit(-1)
 
-def login():#登陆信息
+def login(): # 登陆信息
     global flag
     init()
     name = var_usr_name.get()
