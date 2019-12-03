@@ -1,26 +1,39 @@
 '''
 利用贝叶斯分类器对genderdata数据进行分类
-
-
-
 '''
 
 import pandas as pd
-
+import math
 # 取出数据
 datasets = pd.read_excel('..\data\student2019.xlsx')
+
+# 与朴素贝叶斯分类器不同，这里的身高体重都是连续变量
+# 没办法用0-1之间的一个概率值表示
+# 解决方案：这时 可以假设身高 体重 鞋码都是正态分布
+# 通过样本计算出均值和方差 也就是得到正态分布的密度函数
+# 有了密度函数 就可以把值代入 算出某一点的密度函数的值
 
 def cal_prior_retes():
   # P(A) 先验概率 男和女的概率都为1/2
   prior_pro_boy = prior_pro_girl = 0.5
 
 
-def cal_likelyhood():
+def cal_probablity_function():
   # 计算可能性函数，即调整因子 P(B|A)/P(B)
   # 各个特征值在已知性别下的概率
+  # 计算密度函数
   likelyhood = {}
 
+  height_list = {}
+  weight_list = {}
+  footsize_list = {}
+
   for index in datasets.index.values:
-    
-    attr_pro = {}
-    for attr in datasets.ix[index,]:
+    height_list[index] = datasets.ix[index,0]
+    weight_list[index] = datasets.ix[index,1]
+    footsize_list[index] = datasets.ix[index,2]
+
+  # 先求出均值mean,var方差,std标准差
+  height_mean = np.mean(height_list)
+  weight_mean = np.mean(weight_list)
+  footsize_mean = np.mean(footsize_list)
