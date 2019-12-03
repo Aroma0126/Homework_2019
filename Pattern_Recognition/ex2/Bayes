@@ -4,3 +4,23 @@
 
 
 '''
+
+import pandas as pd
+
+# 取出数据
+datasets = pd.read_excel('..\data\student2019.xlsx')
+
+def cal_prior_retes():
+  # P(A) 先验概率 男和女的概率都为1/2
+  prior_pro_boy = prior_pro_girl = 0.5
+
+
+def cal_likelyhood():
+  # 计算可能性函数，即调整因子 P(B|A)/P(B)
+  # 各个特征值在已知性别下的概率
+  likelyhood = {}
+
+  for index in datasets.index.values:
+    
+    attr_pro = {}
+    for attr in datasets.ix[index,]:
