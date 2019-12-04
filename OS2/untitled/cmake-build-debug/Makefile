@@ -122,32 +122,32 @@ untitled/fast:
 	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/build
 .PHONY : untitled/fast
 
-main.obj: main.cpp.obj
+ex1.obj: ex1.cpp.obj
 
-.PHONY : main.obj
+.PHONY : ex1.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+ex1.cpp.obj:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/ex1.cpp.obj
+.PHONY : ex1.cpp.obj
 
-main.i: main.cpp.i
+ex1.i: ex1.cpp.i
 
-.PHONY : main.i
+.PHONY : ex1.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/main.cpp.i
-.PHONY : main.cpp.i
+ex1.cpp.i:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/ex1.cpp.i
+.PHONY : ex1.cpp.i
 
-main.s: main.cpp.s
+ex1.s: ex1.cpp.s
 
-.PHONY : main.s
+.PHONY : ex1.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/main.cpp.s
-.PHONY : main.cpp.s
+ex1.cpp.s:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/ex1.cpp.s
+.PHONY : ex1.cpp.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... edit_cache
 	@echo ... untitled
 	@echo ... rebuild_cache
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... ex1.obj
+	@echo ... ex1.i
+	@echo ... ex1.s
 .PHONY : help
 
 

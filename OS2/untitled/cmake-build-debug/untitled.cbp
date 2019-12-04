@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/foros/OS2/untitled/main.cpp">
+		<Unit filename="C:/foros/OS2/untitled/ex1.cpp">
 			<Option target="untitled"/>
 		</Unit>
 		<Unit filename="C:/foros/OS2/untitled/CMakeLists.txt">

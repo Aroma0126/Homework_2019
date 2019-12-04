@@ -6,7 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/foros/OS2/untitled/main.cpp
-iostream
+C:/foros/OS2/untitled/ex1.cpp
+cstdio
+-
+ctime
+-
+cstring
+-
+cstdlib
 -
 
