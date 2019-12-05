@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcfb655a-5b25-445d-a861-a2eea533d932" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ex1/opencv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OS2/untitled/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OS2/untitled/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OS2/untitled/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OS2/untitled/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex2/Bayes" beforeDir="false" afterPath="$PROJECT_DIR$/ex2/Bayes" afterDir="false" />
     </list>
@@ -14,6 +16,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Pattern_Recognition$dataview.coverage" NAME="dataview Coverage Results" MODIFIED="1575108117244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ex1" />
+    <SUITE FILE_PATH="coverage/Pattern_Recognition$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1575522595520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/final" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1571417912">
@@ -48,13 +51,47 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1921600767">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Bayes" value="62" />
+          <entry key="py" value="244" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="306" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="png" value="1" />
+          <entry key="py" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Image" value="1" />
+          <entry key="Python" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ex1/dataview.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-358">
+            <state relative-caret-position="-801">
               <caret line="33" selection-start-line="33" selection-end-line="33" selection-end-column="50" />
               <folding>
                 <element signature="e#354#390#0" expanded="true" />
@@ -67,22 +104,16 @@
         <entry file="file://$PROJECT_DIR$/ex1/opencv.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ex2/Bayes">
+        <entry file="file://$PROJECT_DIR$/final/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="4" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
-              <folding>
-                <marker date="1575340416524" expanded="true" signature="168:171" ph="..." />
-                <marker date="1575340416524" expanded="true" signature="168:208" ph="..." />
-                <marker date="1575340416524" expanded="true" signature="231:234" ph="..." />
-                <marker date="1575340416524" expanded="true" signature="231:359" ph="..." />
-              </folding>
+            <state relative-caret-position="232">
+              <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -105,6 +136,7 @@
         <option value="$PROJECT_DIR$/ex1/dataview.py" />
         <option value="$PROJECT_DIR$/ex1/opencv.py" />
         <option value="$PROJECT_DIR$/ex2/Bayes" />
+        <option value="$PROJECT_DIR$/final/__init__.py" />
       </list>
     </option>
   </component>
@@ -114,7 +146,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-12" />
     <option name="y" value="-12" />
     <option name="width" value="984" />
@@ -149,6 +181,11 @@
               <item name="Pattern_Recognition" type="462c0819:PsiDirectoryNode" />
               <item name="ex2" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Pattern_Recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pattern_Recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="final" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -173,7 +210,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.__init__">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Pattern_Recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/final" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="dataview" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Pattern_Recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -196,8 +255,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.dataview" />
+      <item itemvalue="Python.__init__" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.__init__" />
         <item itemvalue="Python.dataview" />
       </list>
     </recent_temporary>
@@ -220,17 +284,17 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18431689" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18997575" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.06654991" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.11908932" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="4" />
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.55341506" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.36602452" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -249,16 +313,26 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ex2/Bayes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding>
+            <element signature="e#35#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ex1/opencv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ex1/dataview.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-358">
+        <state relative-caret-position="-801">
           <caret line="33" selection-start-line="33" selection-end-line="33" selection-end-column="50" />
           <folding>
             <element signature="e#354#390#0" expanded="true" />
@@ -266,16 +340,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ex2/Bayes">
+    <entry file="file://$PROJECT_DIR$/final/pic_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="4" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
-          <folding>
-            <marker date="1575340416524" expanded="true" signature="168:171" ph="..." />
-            <marker date="1575340416524" expanded="true" signature="168:208" ph="..." />
-            <marker date="1575340416524" expanded="true" signature="231:234" ph="..." />
-            <marker date="1575340416524" expanded="true" signature="231:359" ph="..." />
-          </folding>
+        <state relative-caret-position="232">
+          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
         </state>
       </provider>
     </entry>

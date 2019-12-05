@@ -13,10 +13,11 @@ datasets = pd.read_excel('..\data\student2019.xlsx')
 # 通过样本计算出均值和方差 也就是得到正态分布的密度函数
 # 有了密度函数 就可以把值代入 算出某一点的密度函数的值
 
-def cal_prior_retes():
+def cal_prior_retes(probablity):
   # P(A) 先验概率 男和女的概率都为1/2
-  prior_pro_boy = prior_pro_girl = 0.5
-
+  # 可以假设不同的先验概率 0.5/0.5 0.75/0.25
+  prior_pro_boy =  probablity
+  prior_pro_girl = 1 - probablity
 
 def cal_probablity_function():
   # 计算可能性函数，即调整因子 P(B|A)/P(B)
