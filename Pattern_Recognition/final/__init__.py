@@ -12,11 +12,19 @@ import cv2
 
 
 
-
+def show_pic(img,name):
+    cv2.namedWindow('picture_1', cv2.WINDOW_NORMAL)
+    cv2.imshow(name, img)
+    cv2.waitKey()  # avoid picture showing too fast
 
 
 if __name__ == '__main__':
     img = cv2.imread('.\pic_1.png')
-    cv2.namedWindow('picture_1', cv2.WINDOW_NORMAL)
-    cv2.imshow('picture_1',img)
-    cv2.waitKey() # avoid picture showing too fast
+    show_pic(img,'row_pic')
+
+    # 二值化之前进行灰度化处理
+    img_gray = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
+    # 二值化
+    thresh_img = cv2.adaptiveThreshold(~img_gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, -5)
+
+    show_pic(thresh_img,'after threshold')

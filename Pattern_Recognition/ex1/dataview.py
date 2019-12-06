@@ -32,8 +32,8 @@ import pandas as pd
 
 excel1 = pd.read_excel('..\data\student2018.xlsx')
 excel2 = pd.read_excel('..\data\student2019.xlsx')
-iris = pd.read_table('..\data\iris.dat',header=None)
-print(iris)
+iris = pd.read_table('..\data\iris.dat',header=None,sep='\s+')
+# print(iris)
 
 
 
@@ -44,46 +44,71 @@ def Print_1():
 # df.index.values 行号索引
   for x in excel1.index.values:
     if excel1.ix[x,3] == '男':
-      plt.scatter(excel1.ix[x,0].values, excel1.ix[x,1].values,color='#57faff',marker='o',label="16级")
-      plt.text(excel1.ix[x,0].values, excel1.ix[x,1].values, excel1.ix[x,2].values, ha='center', va='bottom', fontsize=15)
+      plt.scatter(excel1.ix[x,0], excel1.ix[x,1],color='#57faff',marker='o',label="16级")
+      plt.text(excel1.ix[x,0], excel1.ix[x,1], excel1.ix[x,2], ha='center', va='bottom', fontsize=6)
     elif excel1.ix[x,3] == '女':
-      plt.scatter(excel1.ix[x,0].values,excel1.ix[x,1].values,color='#ff8080',marker='o',label="16级")
-      plt.text(excel1.ix[x,0].values,excel1.ix[x,1].values, excel1.ix[x,2].values, ha='center', va='bottom',fontsize=15)
+      plt.scatter(excel1.ix[x,0],excel1.ix[x,1],color='#ff8080',marker='o',label="16级")
+      plt.text(excel1.ix[x,0],excel1.ix[x,1], excel1.ix[x,2], ha='center', va='bottom',fontsize=6)
     else:
-      plt.scatter(excel1.ix[x,0].values, excel1.ix[x,1].values,s=excel1.ix[x,2].values,color='g',marker='o',label="16级")
-      plt.text(excel1.ix[x,0].values, excel1.ix[x, 1].values, excel1.ix[x, 2].values, ha='center', va='bottom',fontsize=15)
+      plt.scatter(excel1.ix[x,0], excel1.ix[x,1],s=excel1.ix[x,2],color='g',marker='o',label="16级")
+      plt.text(excel1.ix[x,0], excel1.ix[x, 1], excel1.ix[x, 2], ha='center', va='bottom',fontsize=6)
 
   for x in excel2.index.values:
     if excel2.ix[x,3] == '男':
       plt.scatter(excel2.ix[x:, 0].values, excel2.ix[x:, 1].values, s=excel2.ix[x:, 2].values, color='#57faff', marker='^',label="17级")
+      plt.text(excel2.ix[x, 0], excel2.ix[x, 1], excel2.ix[x, 2], ha='center', va='bottom', fontsize=6)
     elif excel2.ix[x,3] == '女':
       plt.scatter(excel2.ix[x:, 0].values, excel2.ix[x:, 1].values, s=excel2.ix[x:, 2].values, color='#ff8080', marker='^',label="17级")
+      plt.text(excel2.ix[x, 0], excel2.ix[x, 1], excel2.ix[x, 2], ha='center', va='bottom', fontsize=6)
     else:
       plt.scatter(excel2.ix[x:, 0].values, excel2.ix[x:, 1].values, s=excel2.ix[x:, 2].values, color='g', marker='^',label="17级")
-  plt.legend(loc='best')
+      plt.text(excel2.ix[x, 0], excel2.ix[x, 1], excel2.ix[x, 2], ha='center', va='bottom', fontsize=6)
+  # plt.legend(loc='best')
   plt.show()
 
 def Print_2():
 
-  for i in range(0,149):
-    print(iris.ix[i,3])
+  for i in range(1,149):
+    # print(iris.ix[i,3])
     if iris.ix[i,4] == 1:
-      plt.plot(iris.ix[i,0].values,iris.ix[i,1].values,color='483C32',markerfacecolor='9966CC',label='Iris Setosa')
-    elif iris.ix[i,4].values == 2:
-      plt.plot(iris.ix[i, 0].values, iris.ix[i, 1].values, color='483C32', markerfacecolor='FE4C40', label='Iris Versicolour')
+      x_1 = []
+      y_1 = []
+      x_1.append(iris.ix[i, 0])
+      x_1.append(iris.ix[i, 2])
+      y_1.append(iris.ix[i, 1])
+      y_1.append(iris.ix[i, 3])
+      plt.plot(x_1, y_1, color='#9966CC', markerfacecolor='9966CC', label='Iris Setosa')
+      # plt.scatter(iris.ix[i, 0],iris.ix[i, 1],color='#9966CC',label='Iris Setosa')
+    elif iris.ix[i,4] == 2:
+      x_2 = []
+      y_2 = []
+      x_2.append(iris.ix[i, 0])
+      x_2.append(iris.ix[i, 2])
+      y_2.append(iris.ix[i, 1])
+      y_2.append(iris.ix[i, 3])
+      plt.plot(x_2, y_2, color='#FE4C40', markerfacecolor='FE4C40', label='Iris Versicolour')
+      # plt.scatter(iris.ix[i, 0], iris.ix[i, 1], color='#FE4C40', label='Iris Versicolou')
     else:
-      plt.plot(iris.ix[i, 0].values, iris.ix[i, 1].values, color='483C32', markerfacecolor='C3BED4',
-               label='Iris Virginica')
+      x_3 = []
+      y_3 = []
+      x_3.append(iris.ix[i, 0])
+      x_3.append(iris.ix[i, 2])
+      y_3.append(iris.ix[i, 1])
+      y_3.append(iris.ix[i, 3])
+      plt.plot(x_3, y_3, color='#C3BED4', markerfacecolor='C3BED4', label='Iris Virginica')
+      # plt.scatter(iris.ix[i, 0], iris.ix[i, 1], color='#C3BED4', label='Iris Virginica')
 
-  plt.legend(loc='best')
+  #
+  print("---",y_1)
+  # plt.plot(x_1, y_1, color='red', markerfacecolor='9966CC', label='Iris Setosa')
+  # plt.plot(x_2, y_2, color='green', markerfacecolor='FE4C40', label='Iris Versicolour')
+  #plt.plot(x_3, y_3, color='blue', markerfacecolor='C3BED4', label='Iris Virginica')
+  # plt.legend(loc='best')
   plt.show()
 
 if __name__ == '__main__':
 
-  # Print_1()
-  print('----')
-  print(iris.ix[:,0])
-  print(iris.ix[0,:].values)
-  # Print_2()
+  Print_1()
+  Print_2()
 
 
