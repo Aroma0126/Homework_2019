@@ -78,6 +78,8 @@ def Print_2():
       y_1.append(iris.ix[i, 1])
       y_1.append(iris.ix[i, 3])
       plt.plot(x_1, y_1, color='#9966CC', markerfacecolor='9966CC', label='Iris Setosa')
+      for xy in zip(x_1, y_1):
+        plt.annotate("(%s,%s)" % xy, xy=xy, xytext=(-20, 10), textcoords='offset points')
       # plt.scatter(iris.ix[i, 0],iris.ix[i, 1],color='#9966CC',label='Iris Setosa')
     elif iris.ix[i,4] == 2:
       x_2 = []
@@ -98,12 +100,6 @@ def Print_2():
       plt.plot(x_3, y_3, color='#C3BED4', markerfacecolor='C3BED4', label='Iris Virginica')
       # plt.scatter(iris.ix[i, 0], iris.ix[i, 1], color='#C3BED4', label='Iris Virginica')
 
-  #
-  print("---",y_1)
-  # plt.plot(x_1, y_1, color='red', markerfacecolor='9966CC', label='Iris Setosa')
-  # plt.plot(x_2, y_2, color='green', markerfacecolor='FE4C40', label='Iris Versicolour')
-  #plt.plot(x_3, y_3, color='blue', markerfacecolor='C3BED4', label='Iris Virginica')
-  # plt.legend(loc='best')
   plt.show()
 
 if __name__ == '__main__':

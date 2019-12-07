@@ -8,6 +8,7 @@
 
 '''
 
+'''
 import cv2
 
 
@@ -28,3 +29,17 @@ if __name__ == '__main__':
     thresh_img = cv2.adaptiveThreshold(~img_gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, -5)
 
     show_pic(thresh_img,'after threshold')
+
+'''
+
+# 利用算法来识别一个表格不如直接图像处理来的方便，遂放弃这个主题
+# Salary prediction using adult data set
+
+
+
+
+
+# data_train =
+# data_test =
+
+
