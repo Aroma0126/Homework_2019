@@ -13,11 +13,84 @@ datasets = pd.read_excel('..\data\student2019.xlsx')
 # 通过样本计算出均值和方差 也就是得到正态分布的密度函数
 # 有了密度函数 就可以把值代入 算出某一点的密度函数的值
 
+
+class Bayes(object):
+  def __init__(self,train_data):
+    self.data = train_data
+    # 存放每个特征的方差
+    self.model_para = {}
+
+  def train_model(self):
+    nothing = 0
+
+
+
+  def mean(self,data):
+    return sum(data)/float(len(data))
+
+  def std(self,data):
+  # 计算方差,公式为 [((x1-x)^2 + (x2-x)^2 + (x3-x)^3 + ...)/n - 1]^0.5
+    mean = self.mean(data)
+    sum = 0
+    for x in data:
+      sum += pow(x - mean,2)
+    n = len(data) - 1
+    temp = sum/float(n)
+    return math.sqrt(temp)
+
+  # 对每一类样本的每个特征计算均值和方差，结果保存在列表中，依次为第一维特征、第二维特征等...的均值和方差
+  def summarize(self, vectors):
+    # zip利用 * 号操作符，可以将不同元组或者列表压缩为为列表集合。用来提取每类样本下的每一维的特征集合
+    summaries = [(self.mean(attribute), self.stdev(attribute)) for attribute in zip(*vectors)]
+    # 将代表类别的最后一个数据删掉，只保留均值和方差
+    del summaries[-1]
+    return summaries
+
+  def cal_probability(self,x,mean,std):
+  # 计算每一个特征的概率密度
+    a = -(pow(x - mean,2))
+    b = 2 * pow(std,2)
+    exponent = math.exp(a/b)
+    left = 1 / math.sqrt(b * math.pi)
+    return left * exponent
+
+  def cal_class_pro(self,input_data):
+    # input_data 一个待分类数据
+    probabilities = {}
+
+    for class_value,class_sum in self.model_para.items():
+      probabilities[class_value] = 1
+      # len(class_sum) 特征个数
+      for i in range(len(class_sum)):
+        mean,std = class_sum[i]
+        # 提取带分类数据的每一个特征值
+        # 提取要测试的
+        x = input_data[i]
+        # 计算联合概率密度
+        probabilities[class_value] *= self.cal_probability(x,mean,std)
+
+    prediction = max(probabilities,key=probabilities.get)
+    return prediction
+
+  def train_bayes(self):
+    # 把训练集按照男女分类
+    seperated_class = {}
+    for i in range(len(train_data)):
+      student = self.train_data[i]
+      if (student[-1] == '男'):
+        seperated_class[0].append(student)
+      else:
+        seperated_class[1].append(student)
+
+    for class_value,student in seperated_class.items():
+
+
 def cal_prior_retes(probablity):
   # P(A) 先验概率 男和女的概率都为1/2
   # 可以假设不同的先验概率 0.5/0.5 0.75/0.25
   prior_pro_boy =  probablity
   prior_pro_girl = 1 - probablity
+  return prior_pro_boy,prior_pro_girl
 
 def cal_probablity_function():
   # 计算可能性函数，即调整因子 P(B|A)/P(B)
@@ -38,3 +111,16 @@ def cal_probablity_function():
   height_mean = np.mean(height_list)
   weight_mean = np.mean(weight_list)
   footsize_mean = np.mean(footsize_list)
+
+
+def norm():
+  # 正则化数据
+
+def split_dataset():
+  # 按照比例划分训练集和测试集
+  split_num = 0.7
+  return
+
+if __name__ == '__main__':
+
+  train_data,test_data = split_dataset()

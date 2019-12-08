@@ -36,9 +36,6 @@ if __name__ == '__main__':
 # Salary prediction using adult data set
 
 
-
-
-
 # data_train =
 # data_test =
 

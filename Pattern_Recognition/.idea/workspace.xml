@@ -4,8 +4,9 @@
     <list default="true" id="bcfb655a-5b25-445d-a861-a2eea533d932" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../OS2/untitled/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OS2/untitled/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OS2/untitled/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OS2/untitled/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OS2/untitled/ex1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../OS2/untitled/ex1.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex1/dataview.py" beforeDir="false" afterPath="$PROJECT_DIR$/ex1/dataview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex2/Bayes" beforeDir="false" afterPath="$PROJECT_DIR$/ex2/Bayes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,29 +55,30 @@
     <session id="-1921600767">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Bayes" value="62" />
+          <entry key="Bayes" value="1446" />
           <entry key="md" value="72" />
-          <entry key="py" value="784" />
+          <entry key="py" value="830" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="72" />
-          <entry key="Python" value="846" />
+          <entry key="Python" value="2276" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="Bayes" value="1" />
           <entry key="md" value="1" />
           <entry key="png" value="1" />
           <entry key="py" value="1" />
@@ -86,7 +88,7 @@
         <counts>
           <entry key="Image" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="1" />
+          <entry key="Python" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -96,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ex1/dataview.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
+            <state relative-caret-position="940">
               <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
               <folding>
                 <element signature="e#354#390#0" expanded="true" />
@@ -114,11 +116,31 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="179">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ex2/Bayes">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="85" selection-start-line="85" selection-end-line="85" />
+              <folding>
+                <element signature="e#35#54#0" expanded="true" />
+                <marker date="1575811277595" expanded="true" signature="287:2108" ph="..." />
+                <marker date="1575811277595" expanded="true" signature="414:436" ph="..." />
+                <marker date="1575811277595" expanded="true" signature="1298:1301" ph="..." />
+                <marker date="1575811277595" expanded="true" signature="1298:1303" ph="..." />
+                <marker date="1575811277595" expanded="true" signature="1805:1810" ph="..." />
+                <marker date="1575811277595" expanded="true" signature="2808:2811" ph="..." />
+                <marker date="1575811277595" expanded="true" signature="2840:2843" ph="..." />
+                <marker date="1575811277595" expanded="true" signature="2840:2887" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,10 +161,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ex1/opencv.py" />
-        <option value="$PROJECT_DIR$/ex2/Bayes" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/ex1/dataview.py" />
         <option value="$PROJECT_DIR$/final/__init__.py" />
+        <option value="$PROJECT_DIR$/ex2/Bayes" />
       </list>
     </option>
   </component>
@@ -152,11 +174,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="984" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="32767" />
+    <option name="y" value="32767" />
+    <option name="width" value="1946" />
+    <option name="height" value="1106" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -164,6 +186,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,7 +218,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -286,14 +308,36 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
-    <editor active="true" />
+    <frame x="21845" y="21845" width="1297" height="737" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16410671" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.16653194" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.6462347" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.18914185" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="3" weight="0.32924694" />
+      <window_info anchor="bottom" id="Python Console" order="4" weight="0.32924694" />
+      <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.22767076" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.39929947" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="SciView" order="2" weight="0.15036379" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16653194" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.18914185" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32924694" />
       <window_info anchor="bottom" id="Python Console" order="4" weight="0.32924694" />
@@ -310,7 +354,7 @@
       <window_info anchor="right" id="SciView" order="2" visible="true" weight="0.15036379" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -319,13 +363,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ex2/Bayes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/final/pic_1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -341,7 +378,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ex1/dataview.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
+        <state relative-caret-position="940">
           <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
           <folding>
             <element signature="e#354#390#0" expanded="true" />
@@ -358,8 +395,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/final/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="179">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex2/Bayes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+          <folding>
+            <element signature="e#35#54#0" expanded="true" />
+            <marker date="1575811277595" expanded="true" signature="287:2108" ph="..." />
+            <marker date="1575811277595" expanded="true" signature="414:436" ph="..." />
+            <marker date="1575811277595" expanded="true" signature="1298:1301" ph="..." />
+            <marker date="1575811277595" expanded="true" signature="1298:1303" ph="..." />
+            <marker date="1575811277595" expanded="true" signature="1805:1810" ph="..." />
+            <marker date="1575811277595" expanded="true" signature="2808:2811" ph="..." />
+            <marker date="1575811277595" expanded="true" signature="2840:2843" ph="..." />
+            <marker date="1575811277595" expanded="true" signature="2840:2887" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
