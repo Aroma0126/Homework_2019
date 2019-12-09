@@ -23,7 +23,7 @@ long ChooseAlgo()
     char s[128];
     printf("Please type the Algorithm(Priority\\Round Robin):");
     gets(s);
-    if (s[0]=='P' || s[0]=='p')
+    if (s[0] == 'P' || s[0] == 'p')
         return 1;
     return 0;
 }
@@ -46,7 +46,7 @@ void init()
 void showit()
 {
     long i;
-    printf("=====================================================\n");
+    printf(" ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == =\n");
     printf("%-25s","ID");
     for (i=1; i<=n; i++)  printf("%4ld", PCB[i].id);
     printf("\n%-25s","PRIORITY//TURNTIME");
@@ -57,11 +57,11 @@ void showit()
     for (i=1; i<=n; i++)  printf("%4ld", PCB[i].totaltime);
     printf("\n%-25s","STATUS");
     for (i=1; i<=n; i++)  printf("%4c", PCB[i].status);
-    printf("\n=====================================================\n");
-    if (RUN != -1)  printf("RUNNING PROCESS: %ld\n", RUN);
+    printf("\n ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == =\n");
+    if (RUN  !=  -1)  printf("RUNNING PROCESS: %ld\n", RUN);
     else printf("RUNNING PROCESS: NULL\n");
     printf("WAITING QUEUE: ");
-    for (i=HEAD; i!=-1; i=link[i])  printf("%ld ", i);
+    for (i=HEAD; i != -1; i=link[i])  printf("%ld ", i);
     printf("\n\n");
 }
 
@@ -99,30 +99,30 @@ void main_priority()
     RUN = HEAD;
     PCB[RUN].status = 'R';
     HEAD = link[HEAD];		//运行链首进程
-    while (RUN != -1)
+    while (RUN  !=  -1)
     {
         showit();
         PCB[RUN].totaltime--;
         PCB[RUN].priority -= 3;     //优先级减3
         PCB[RUN].runtime++;
-        if (PCB[RUN].totaltime == 0)	//进程运行完成
+        if (PCB[RUN].totaltime  ==  0)	//进程运行完成
         {
             PCB[RUN].status='F';
             RUN = HEAD;
-            if (HEAD != -1)
+            if (HEAD  !=  -1)
                 HEAD = link[HEAD];
             PCB[RUN].status='R';
         }
         else
         {
-            if (HEAD != -1 && PCB[RUN].priority < PCB[HEAD].priority)
+            if (HEAD  !=  -1 && PCB[RUN].priority < PCB[HEAD].priority)
             {
                 k=HEAD;
                 PCB[RUN].status = 'W';
                 //寻找等待链中的合适位置
-                while (k!=TAIL && PCB[link[k]].priority > PCB[RUN].priority)
+                while (k != TAIL && PCB[link[k]].priority > PCB[RUN].priority)
                     k=link[k];
-                if (k == TAIL)
+                if (k  ==  TAIL)
                 {
                     link[k] = RUN;		//插入链尾之后
                     TAIL = RUN;
@@ -163,22 +163,22 @@ void main_round_robin()
     RUN = HEAD;
     PCB[RUN].status = 'R';
     HEAD = link[HEAD];//运行首进程
-    while (RUN != -1)
+    while (RUN  !=  -1)
     {
         showit();
         PCB[RUN].totaltime--;
         PCB[RUN].runtime++;
-        if (PCB[RUN].totaltime == 0)//进程运行完成
+        if (PCB[RUN].totaltime  ==  0)//进程运行完成
         {
             PCB[RUN].status = 'F';
             RUN = HEAD;
-            if (HEAD != -1)
+            if (HEAD  !=  -1)
                 HEAD = link[HEAD];
             PCB[RUN].status = 'R';
         }
         else
         {
-            if (HEAD != -1 && PCB[RUN].runtime % PCB[RUN].priority==0)//轮转时间到
+            if (HEAD  !=  -1 && PCB[RUN].runtime % PCB[RUN].priority == 0)//轮转时间到
             {
                 PCB[RUN].status='W';	//插入链尾
                 link[TAIL]=RUN;
@@ -198,7 +198,7 @@ int main()
     long algo;
     srand(time(NULL));
     algo = ChooseAlgo();
-    if (algo == 1)
+    if (algo  ==  1)
     {
         main_priority();//优先数法
     }
