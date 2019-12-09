@@ -7,12 +7,18 @@
 #IncludeRegexTransform: 
 
 C:/foros/OS2/untitled/ex1.cpp
-cstdio
+stdio.h
 -
-ctime
+stdlib.h
 -
-cstring
+stdbool.h
 -
-cstdlib
+unistd.h
+-
+time.h
+-
+string.h
+-
+sys/types.h
 -
 

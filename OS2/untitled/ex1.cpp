@@ -1,202 +1,308 @@
-#include <cstdio>
-#include <ctime>
-#include <cstring>
-#include <cstdlib>
-const long n=5;
+#include<stdio.h>
+#include<stdlib.h>
+#include<stdbool.h>
+#include<unistd.h>
+#include<time.h>
+#include<string.h>
+#include <sys/types.h>
+// #include <sys/syscall.h>
+#define PNUM  5 //½ø³ÌµÄÊıÁ¿
+#define TIMER 8 //¶¨Ê±Æ÷,×î³¤CPUÇø¼äÊ±¼ä
+int timenow=0;     //µ±Ç°Ê±¿Ì
+typedef struct node
+{
+    int pid;                             //½ø³ÌºÅ
+    int priority;                        //½ø³ÌÓÅÏÈ¼¶,1~3,Êı×ÖÔ½Ğ¡ÓÅÏÈ¼¶Ô½¸ß
+    int arrival;                         //µ½´ïÊ±¼ä
+    int burst;                           //CPUÇø¼äÊ±¼ä
+    int rest;                            //Ê£ÓàÊ±¼ä
+    char state;                  //½ø³Ì×´Ì¬,'N'ĞÂ½¨,'R'ÔËĞĞ,'W'µÈ´ı,'T'ÖÕÖ¹
+    // Run, Waiting, Finish -> ÔËĞĞ£¬¾ÍĞ÷£¬Íê³É
+    struct node *next;
+}PCB;
 
-struct pcbtype		//è¿›ç¨‹æ§åˆ¶å—ç»“æ„
-{
-    long id, priority, runtime, totaltime;
-    char status;	//R, W, F -> è¿è¡Œï¼Œå°±ç»ªï¼Œå®Œæˆ
-}PCB[n+1];
+int gantt[TIMER*PNUM]={0}; //ÓÃÒ»¸öganttÊı×é¼ÇÂ¼µ÷¶È¹ı³Ì,Ã¿¸öÊ±¿Ìµ÷¶ÈµÄ½ø³ÌºÅ
 
-long link[n+1];	//é“¾è¡¨ç»“æ„
-long RUN, HEAD, TAIL;
-//é€‰æ‹©ç®—æ³•
-long ChooseAlgo()
+PCB *job;//ËùÓĞ×÷ÒµµÄĞòÁĞ,´øÍ·½Úµã(Îª¼ò»¯±à³Ì)
+PCB *ready=NULL; //½ø³Ì¾ÍĞ÷¶ÓÁĞ,²»´øÍ·½Úµã
+PCB *tail=NULL;  //¼ÇÂ¼¾ÍĞ÷¶ÓÁĞµÄÎ²½Úµã
+PCB *run=NULL;//ÕıÔÚÔËĞĞÖĞµÄ½ø³Ì,²»´øÍ·½áµã
+PCB *finish=NULL;//ÒÑ¾­½áÊøµÄ³ÌĞò,²»´øÍ·½áµã
+PCB *cur=NULL;
+void InitialJob()
 {
-    char s[128];
-    printf("Please type the Algorithm(Priority\\Round Robin):");
-    gets(s);
-    if (s[0]=='P' || s[0]=='p')
-        return 1;
-    return 0;
-}
-//åˆå§‹åŒ–
-void init()
-{
-    long i;
-    for (i=1; i<=n; i++)
-    {
-        PCB[i].id = i;
-        PCB[i].priority = rand()%4+1;
-        PCB[i].runtime = 0;
-        PCB[i].totaltime = rand()%8+1;
-        PCB[i].status = 'W';
-    }
-}
-//æ˜¾ç¤ºè¿›ç¨‹è°ƒåº¦çŠ¶å†µ
-void showit()
-{
-    long i;
-    printf("=====================================================\n");
-    printf("%-25s","ID");
-    for (i=1; i<=n; i++)  printf("%4ld", PCB[i].id);
-    printf("\n%-25s","PRIORITY//TURNTIME");
-    for (i=1; i<=n; i++)  printf("%4ld", PCB[i].priority);
-    printf("\n%-25s", "CPUTIME");
-    for (i=1; i<=n; i++)  printf("%4ld", PCB[i].runtime);
-    printf("\n%-25s", "ALLTIME");
-    for (i=1; i<=n; i++)  printf("%4ld", PCB[i].totaltime);
-    printf("\n%-25s","STATUS");
-    for (i=1; i<=n; i++)  printf("%4c", PCB[i].status);
-    printf("\n=====================================================\n");
-    if (RUN != -1)  printf("RUNNING PROCESS: %ld\n", RUN);
-    else printf("RUNNING PROCESS: NULL\n");
-    printf("WAITING QUEUE: ");
-    for (i=HEAD; i!=-1; i=link[i])  printf("%ld ", i);
-    printf("\n\n");
-}
-//ä¼˜å…ˆæ•°è°ƒåº¦ç®—æ³•
-void main_priority()
-{
-    long i, j, k;
-    long sort[n+1];
-    init();
-//è®¾ç½®å°±ç»ªé“¾
-    for (i=1; i<=n; i++)
-    {
-        sort[i] = i;
-    }
-    for (i=1; i<=n; i++)		 //æ ¹æ®ä¼˜å…ˆæ•°æ’åº
-    {
-        for (j=n; j>i; j--)
-        {
-            if (PCB[sort[j]].priority > PCB[sort[j-1]].priority)
-            {
-                k=sort[j]; sort[j]=sort[j-1]; sort[j-1]=k;
-            }
-        }
-    }
+    int i=0;
+    PCB *p,*tail;
+    job=(PCB *)malloc(sizeof(PCB));//Éú³ÉÍ·½Úµã,ÆäËüÓòÎŞÒâÒå
+    job->next=NULL;
+    tail=job;
 
-    HEAD=sort[1];
-    for (i=1; i<n; i++)
+    for(i=0;i<PNUM;i++)
     {
-        link[sort[i]] = sort[i+1];
+        p=(PCB *)malloc(sizeof(PCB));//Éú³ÉĞÂ½Úµã(ĞÂ½ø³Ì)
+        p->pid=i+1;
+        p->priority=rand()%3+1;    //Ëæ»úÉú³ÉÓÅÏÈ¼¶:1~3
+        p->arrival=0;              // ¼ÙÉèÍ¬Ê±µ½´ï
+        p->burst=rand()%TIMER+1;   //Ëæ»úÉú³ÉCPUÇø¼äÊ±¼ä:1~10;(¹À¼ÆÔËĞĞÊ±¼ä)
+        p->rest=p->burst;
+        p->state='W';              //³õÊ¼»¯½ø³ÌµÄ×´Ì¬Îª'¾ÍĞ÷'
+        p->next=NULL;
+        tail->next=p;
+        tail=p;                    //´øÍ·½áµã
     }
-    TAIL = sort[n];
-    link[TAIL] = -1;
-    RUN = -1;
-    //å°±ç»ªé“¾è®¾ç½®å®Œæ¯•
-    RUN = HEAD;
-    PCB[RUN].status = 'R';
-    HEAD = link[HEAD];		//è¿è¡Œé“¾é¦–è¿›ç¨‹
-    while (RUN != -1)
+}
+void DisplayPCB(PCB *pcb) //ÏÔÊ¾¶ÓÁĞ
+{
+    struct node *p=pcb;
+    if(pcb==NULL) {printf("PROCESS QUEUE IS NULL!\n");return;}
+    printf("ID PRIORITY ARRIVAL Çø¼äÊ±¼ä Ê£ÓàÊ±¼ä STATUS\n");
+    do{
+        printf("P%-3d\t",p->pid);
+        printf("%3d\t",p->priority);
+        printf("%3d\t",p->arrival);
+        printf("%3d\t",p->burst);
+        printf("%3d\t",p->rest);
+        printf("%3c\t",p->state);
+        printf("\n");
+        p=p->next;
+    }while(p!=NULL);
+}
+
+void DisplayGantt() //ÏÔÊ¾¸ÊÌØÊı×é
+{
+    int i=0;
+    for(i=0;i<timenow;i++)
     {
-        showit();
-        PCB[RUN].totaltime--;
-        PCB[RUN].priority -= 3;     //ä¼˜å…ˆçº§å‡3
-        PCB[RUN].runtime++;
-        if (PCB[RUN].totaltime == 0)	//è¿›ç¨‹è¿è¡Œå®Œæˆ
-        {
-            PCB[RUN].status='F';
-            RUN = HEAD;
-            if (HEAD != -1)
-                HEAD = link[HEAD];
-            PCB[RUN].status='R';
-        }
+        if(gantt[i]==0) printf("¿ÕÏĞ,");
         else
-        {
-            if (HEAD != -1 && PCB[RUN].priority < PCB[HEAD].priority)
-            {
-                k=HEAD;
-                PCB[RUN].status = 'W';
-                //å¯»æ‰¾ç­‰å¾…é“¾ä¸­çš„åˆé€‚ä½ç½®
-                while (k!=TAIL && PCB[link[k]].priority > PCB[RUN].priority)
-                    k=link[k];
-                if (k == TAIL)
-                {
-                    link[k] = RUN;		//æ’å…¥é“¾å°¾ä¹‹å
-                    TAIL = RUN;
-                    link[RUN] = -1;
-                    RUN = HEAD;
-                    HEAD = link[HEAD];
-                    PCB[RUN].status = 'R';
-                }
-                else
-                {
-                    link[RUN] = link[k];		//æ’å…¥é“¾ä¸­
-                    link[k] = RUN;
-                    RUN = HEAD;		//é“¾é¦–è¿›ç¨‹å¼€å§‹è¿è¡Œ
-                    HEAD = link[HEAD];
-                    PCB[RUN].status = 'R';
-                }
-            }
-        }
+            printf("P%d,",gantt[i]);
     }
-    showit();
+    printf("\n");
 }
-//è½®è½¬è°ƒåº¦ç®—æ³•
-void main_round_robin()
+
+void DisplayTime() //ÏÔÊ¾ÖÜ×ªÊ±¼ät,µÈ´ıÊ±¼äwºÍÏìÓ¦Ê±¼är
 {
-    long i;
-    init();
-    //è®¾ç½®å°±ç»ªé“¾
-    HEAD = 1;
-    for (i=1; i<n; i++)
-    {
-        link[i] = i+1;
+    int t=0,w=0,r=0;
+    float t_avg=0,w_avg=0,r_avg=0;
+    int i,j;
+    PCB *p; //ÓÃp±éÀúfinish¶ÓÁĞ,²éÕÒ½ø³ÌPiµÄµ½´ïÊ±¼ä,µ÷ÓÃ¸Ãº¯ÊıÊ±ËùÓĞ½ø³Ì¶¼ÒÑ·ÅÈëfinish¶ÓÁĞ
+    if(finish==NULL) {return;}
+    printf("½ø³ÌºÅ    ÖÜ×ªÊ±¼ä    µÈ´ıÊ±¼ä    ÏìÓ¦Ê±¼ä\n");
+    for(i=1;i<=PNUM;i++)
+    { p=finish;
+        while(p->pid!=i) p=p->next;
+        j=0;
+        while(gantt[j]!=i) j++; //±éÀú¸ÊÌØÊı×é,Çó½ø³ÌPiµÄÏìÓ¦Ê±¼ä
+        r=j;  //ÏìÓ¦Ê±¿Ì
+        t=j+1;
+        for(j=r+1;j<timenow;j++) //¼ÌĞø±éÀú,ÇóÖÜ×ªÊ±¼ä
+        { if(i==gantt[j]) t=j+1;}//½áÊøÊ±¿Ì
+        r=r-p->arrival;  //ÏìÓ¦Ê±¼ä=ÏìÓ¦Ê±¿Ì-µ½´ïÊ±¿Ì
+        t=t-p->arrival; //ÖÜ×ªÊ±¼ä=½áÊøÊ±¿Ì-µ½´ïÊ±¿Ì
+        w=t-p->burst; //µÈ´ıÊ±¼ä=ÖÜ×ªÊ±¼ä-ÔËĞĞÊ±¼ä
+        r_avg+=(float)r/PNUM; //Æ½¾ùÏìÓ¦Ê±¼ä
+        w_avg+=(float)w/PNUM;  //Æ½¾ùµÈ´ıÊ±¼ä
+        t_avg+=(float)t/PNUM;   //Æ½¾ùÖÜ×ªÊ±¼ä
+
+        printf("P%d       %4d       %4d       %4d\n",i,t,w,r);
     }
-    TAIL = n;
-    link[TAIL] = -1;
-    RUN = -1;
-    //å°±ç»ªé“¾è®¾ç½®å®Œæ¯•
-    RUN = HEAD;
-    PCB[RUN].status = 'R';
-    HEAD = link[HEAD];//è¿è¡Œé¦–è¿›ç¨‹
-    while (RUN != -1)
+    printf("Æ½¾ùÖÜ×ªÊ±¼ä:%.2f,Æ½¾ùµÈ´ıÊ±¼ä%.2f,Æ½¾ùÏìÓ¦Ê±¼ä%.2f\n",t_avg,w_avg,r_avg);
+}
+void ReadyQueue(char * algo,int t) //¸ù¾İ×÷Òµ¶ÓÁĞ¹¹Ôì¾ÍĞ÷¶ÓÁĞ,algo:Ëã·¨,t:µ±Ç°Ê±¿Ì
+{
+    struct node *jpre,*jcur,*rpre,* rcur;
+    int j,r,a=0;
+    if(strcmp(algo,"FCFS")==0||strcmp(algo,"RR")==0)//FCFSºÍRRµÄ¾ÍĞ÷¶ÓÁĞµÄ¹¹Ôì·½Ê½ÏàÍ¬
+        a=0;
+    else if(strcmp(algo,"SJF")==0)  //·ÇÇÀÕ¼SJF
+        a=1;
+    else if(strcmp(algo,"SRTF")==0)  //ÇÀÕ¼Ê½SJF,×î¶ÌÊ£ÓàÊ±¼äÓÅÏÈ
+        a=2;
+    else if(strcmp(algo,"Priority")==0||strcmp(algo,"NonPriority")==0)//ÇÀÕ¼ºÍ·ÇÇÀÕ¼ÓÅÏÈ¼¶
+        a=3;
+    else {printf("ReadyQueue()º¯Êıµ÷ÓÃ²ÎÊı´íÎó!\n");exit(0);}
+    if(job->next==NULL) {printf("×÷Òµ¶ÓÁĞÎª¿Õ!\n");return;}
+    jpre=job;// ×¢Òâ£¡£¡µÚÒ»¸öÊÇÍ·½áµã£¬ÒªÈÆ¿ªËü!!!
+    jcur=job->next;
+    while(jcur!=NULL) //±éÀú×÷ÒµĞòÁĞÖĞÑ¡ÔñÒÑµ½´ï½ø³Ì,½«Æä´Ó×÷Òµ¶ÓÁĞÒÆÈë¾ÍĞ÷¶ÓÁĞ,Ö±µ½×÷Òµ¶ÓÁĞÎª¿Õ
     {
-        showit();
-        PCB[RUN].totaltime--;
-        PCB[RUN].runtime++;
-        if (PCB[RUN].totaltime == 0)//è¿›ç¨‹è¿è¡Œå®Œæˆ
+        if(jcur->arrival<=t) //Èç¹ûµ±Ç°Ê±¿Ì½ø³ÌÒÑ¾­µ½´ï,Ôò½«Æä²åÈëµ½¾ÍĞ÷¶ÓÁĞµÄºÏÊÊÎ»ÖÃ
         {
-            PCB[RUN].status = 'F';
-            RUN = HEAD;
-            if (HEAD != -1)
-                HEAD = link[HEAD];
-            PCB[RUN].status = 'R';
-        }
-        else
+            printf("P%dµ½´ï.\n",jcur->pid);
+            jpre->next=jcur->next;  //½«jcur´Ó×÷Òµ¶ÓÁĞÒÆ³ı
+            jcur->state='W';//½«½ø³Ì×´Ì¬ÉèÖÃÎª¾ÍĞ÷
+            if(ready==NULL) //¾ÍĞ÷¶ÓÁĞÎª¿Õ
+            {jcur->next=NULL;ready=jcur;tail=ready;}
+            else  //¾ÍĞ÷¶ÓÁĞ²»Îª¿Õ,±éÀú¾ÍĞ÷¶ÓÁĞ,½«jcur²åÈëµ½ºÏÊÊÎ»ÖÃ
+            {	 rpre=ready;
+                rcur=ready;
+                switch (a){ //±éÀú¾ÍĞ÷¶ÓÁĞ²éÕÒ²åÈëµã
+                    case 0:    //FCFS,RR.¸ù¾İµ½´ïÊ±¼äarrival²éÕÒºÏÊÊ²åÈëµã
+                        while((rcur!=NULL)&&(jcur->arrival>=rcur->arrival))
+                        {rpre=rcur;rcur=rcur->next;}
+                        break;
+                    case 1: //SJF,¸ù¾İÇø¼äÊ±¼äburst²éÕÒºÏÊÊ²åÈëµã
+                        while((rcur!=NULL)&&(jcur->burst>=rcur->burst))
+                        {rpre=rcur;rcur=rcur->next;}
+                        break;
+                    case 2:  //STRF,¸ù¾İÊ£ÓàÊ±¼ärest²éÕÒºÏÊÊ²åÈëµã
+                        while((rcur!=NULL)&&(jcur->rest>=rcur->rest))
+                        {rpre=rcur;rcur=rcur->next;}
+                        break;
+                    case 3:  //Priority, Non-Priority,¸ù¾İÓÅÏÈ¼¶²éÕÒºÏÊÊ²åÈëµã
+                        while((rcur!=NULL)&&(jcur->priority>=rcur->priority))
+                        {rpre=rcur;rcur=rcur->next;}
+
+                        break;
+                    default: break;
+                }
+                if(rcur==NULL)// ²åÈëµãÔÚ¾ÍĞ÷¶ÓÁĞÎ²²¿
+                {
+                    jcur->next=NULL;
+                    rpre->next=jcur;
+                    tail=jcur;
+                }
+                else if(rcur==ready) //²åÈëµãÔÚÍ·²¿
+                {
+                    jcur->next=rcur;
+                    ready=jcur;
+                }
+                else //²åÈëµ½rpreºÍrcurÖ®¼ä
+                {
+                    jcur->next=rcur;
+                    rpre->next=jcur;
+                }
+            }
+            jcur=jpre->next;  //ÏÂÒ»¸ö×÷Òµ
+        }else   //µ±Ç°×÷ÒµÎ´´ïµ½
+        {jpre=jcur;jcur=jcur->next;} //ÏÂÒ»¸ö×÷Òµ
+    }
+    printf("\n×÷Òµ¶ÓÁĞ:\n");
+    DisplayPCB(job->next);
+}
+
+void RR(int slice)  //Ê±¼äÆ¬
+{
+    timenow=0;
+    int count=0; //Ê±¼äÆ¬¼ÆÊı,count==slice±íÊ¾½ø³ÌÒÑ¾­ÔËĞĞÒ»¸öÊ±¼äÆ¬
+    while(true){
+        printf("\nµ±Ç°Ê±¿Ì:%d\n",timenow);
+        ReadyQueue("RR",timenow);//Ë¢ĞÂ¾ÍĞ÷¶ÓÁĞ
+        printf("¾ÍĞ÷¶ÓÁĞ:\n");
+        DisplayPCB(ready);
+
+        if(job->next==NULL&&ready==NULL&&run==NULL) {break;} //Ã»ÓĞ½ø³Ì,½áÊøÑ­»·
+        if(ready==NULL) {tail=NULL;}
+        if(tail!=NULL) printf("¾ÍĞ÷¶ÓÁĞÎ²½Úµã:P%d\n",tail->pid);
+        if(ready!=NULL||run!=NULL) //ÓĞ½ø³Ì´¦ÓÚ¾ÍĞ÷»òÕßÔËĞĞ×´Ì¬
         {
-            if (HEAD != -1 && PCB[RUN].runtime % PCB[RUN].priority==0)//è½®è½¬æ—¶é—´åˆ°
+            if(run==NULL)//ÈôCPU¿ÕÏĞ
             {
-                PCB[RUN].status='W';	//æ’å…¥é“¾å°¾
-                link[TAIL]=RUN;
-                link[RUN]=-1;
-                TAIL=RUN;
-                RUN=HEAD;//é“¾é¦–è¿›ç¨‹å¼€å§‹è¿è¡Œ
-                HEAD=link[HEAD];
-                PCB[RUN].status='R';
+                run=ready;      //½«CPU·ÖÅä¸øready¶ÓÁĞµÄµÚÒ»¸ö½ø³Ì
+                ready=ready->next;
+                run->next=NULL;
+                printf("\nP%d±»µ÷¶È³ÌĞò·ÖÅÉCPU!\n",run->pid);
+            }
+            count++;
+            run->rest--;
+            run->state='R';
+            printf("\nP%dÕıÔÚÔËĞĞ.......\n",run->pid);
+            printf("ÔËĞĞ½ø³Ì:\n");
+            DisplayPCB(run);
+            gantt[timenow]=run->pid; //¼ÇÂ¼µ±Ç°Ê±¿Ìµ÷¶È½ø³ÌµÄIDºÅ
+            if(run->rest==0){
+                printf("\nP%d½áÊø!\n",run->pid);
+                run->state='T';
+                run->next=finish;   //ĞÂÍê³ÉµÄ½Úµã²åÈëµ½finishµÄÍ·½áµã,¼òµ¥Ò»µã
+                finish=run;
+                run=NULL;
+                printf("½áÊø½ø³Ì¶ÓÁĞ:\n");
+                DisplayPCB(finish);
+            }
+            else if(count%slice==0){
+                if(ready==NULL){
+                    ready=run;
+                    tail=run;
+                    run->state='W';
+                    run=NULL;
+                }
+                else{
+                    tail->next=run;
+                    tail=run;
+                    tail->next=NULL;
+                    run->state='W';
+                    run=NULL;
+                }
+            }
+            //ÕâÀï¼ÓÈëRRµ÷¶ÈµÄ´úÂë
+        }
+        timenow++; //ÏÂÒ»Ê±¿Ì¼ÌĞøÉ¨Ãè×÷Òµ¶ÓÁĞ
+    }
+}
+
+void Priority()//ÇÀÕ¼Ê½ÓÅÏÈ¼¶
+{
+    timenow=0;
+    while(true)
+    {
+        printf("\nµ±Ç°Ê±¿Ì:%d\n",timenow);
+        ReadyQueue("Priority",timenow);//Ë¢ĞÂ¾ÍĞ÷¶ÓÁĞ
+        printf("¾ÍĞ÷¶ÓÁĞ:\n");
+        DisplayPCB(ready);
+        if(job->next==NULL&&ready==NULL&&run==NULL) break; //Ã»ÓĞ½ø³Ì,½áÊøÑ­»·
+        if(ready!=NULL||run!=NULL) //ÓĞ½ø³Ì´¦ÓÚ¾ÍĞ÷»òÕßÔËĞĞ×´Ì¬
+        {
+            if(run==NULL)//ÈôCPU¿ÕÏĞ
+            {
+                run=ready;      //½«CPU·ÖÅä¸øready¶ÓÁĞµÄµÚÒ»¸ö½ø³Ì
+                ready=ready->next;
+                run->next=NULL;
+                printf("\nP%d±»µ÷¶È³ÌĞò·ÖÅÉCPU!\n",run->pid);
+            }
+            else if(ready!=NULL&&ready->priority < run->priority){
+                tail=ready;
+                if(ready->next==NULL){
+                }
+                else {
+                    while(tail->next->priority < run->priority&&tail->next!=NULL){
+                        tail=tail->next;
+                    }
+                }
+                run->next=tail->next;
+                tail->next=run;
+                run=ready;
+                ready=ready->next;
+                run->next=NULL;
+                run->state='W';
+            }
+            run->rest--;    //ĞŞ¸Ä½ø³ÌPCB
+            run->state='R';
+            printf("\nP%dÕıÔÚÔËĞĞ.......\n",run->pid);
+            printf("ÔËĞĞ½ø³Ì:\n");
+            DisplayPCB(run);
+            gantt[timenow]=run->pid; //¼ÇÂ¼µ±Ç°Ê±¿Ìµ÷¶È½ø³ÌµÄIDºÅ
+            if(run->rest==0)
+            {
+                printf("\nP%d½áÊø!\n",run->pid);
+                run->state='T';
+                run->next=finish;   //ĞÂÍê³ÉµÄ½Úµã²åÈëµ½finishµÄÍ·½áµã,¼òµ¥Ò»µã
+                finish=run;
+                run=NULL;
+                printf("½áÊø½ø³Ì¶ÓÁĞ:\n");
+                DisplayPCB(finish);
             }
         }
+        timenow++; //ÏÂÒ»Ê±¿Ì¼ÌĞøÉ¨Ãè×÷Òµ¶ÓÁĞ
     }
-    showit();
 }
-//ä¸»å‡½æ•°
 int main()
-{
-    long algo;
-    srand(time(NULL));
-    algo = ChooseAlgo();
-    if (algo == 1)
-    {
-        main_priority();//ä¼˜å…ˆæ•°æ³•
-    }
-    else
-    {
-        main_round_robin();//ç®€å•è½®è½¬æ³•
-    }
-    printf("SYSTEM FINISHED\n");
-    return 0;
+{    srand((int)time(NULL)); //Ëæ»úÊıÖÖ×Ó
+    //srand(0);
+    InitialJob();
+    DisplayPCB(job->next);
+    RR(1);
+    //Priority();
+    //DisplayGantt();
+    //DisplayTime();
+    return EXIT_SUCCESS;;
 }

@@ -12,22 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cba149a0-57e1-4c89-aeb0-5ef5134e9ade" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/temp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/untitled.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/untitled.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/untitled.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/untitled.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ex1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pattern_Recognition/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Pattern_Recognition/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,17 +31,21 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ex1.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2737">
-              <caret line="202" selection-start-line="202" selection-end-line="202" />
+            <state relative-caret-position="108">
+              <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -59,11 +53,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Documents/Tencent Files/675546066/FileRecv/SX1.cpp">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/temp.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="159" column="29" selection-end-line="202" />
+            <state relative-caret-position="1728">
+              <caret line="126" column="32" selection-start-line="126" selection-start-column="32" selection-end-line="126" selection-end-column="32" />
+              <folding>
+                <element signature="e#39#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Documents/Tencent Files/675546066/FileRecv/SY1_SK3.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -81,12 +87,16 @@
       <list>
         <option value="$USER_HOME$/Documents/Tencent Files/675546066/FileRecv/SX1.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/temp.cpp" />
+        <option value="$PROJECT_DIR$/ex1.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-54" />
-    <option name="width" value="1503" />
+    <option name="x" value="-41" />
+    <option name="y" value="13" />
+    <option name="width" value="1683" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -95,6 +105,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -106,7 +117,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -145,26 +155,33 @@
       <option name="presentableId" value="Default" />
       <updated>1575341553814</updated>
       <workItem from="1575341554913" duration="1893000" />
+      <workItem from="1575448597583" duration="633000" />
+      <workItem from="1575519249844" duration="1473000" />
+      <workItem from="1575591210269" duration="812000" />
+      <workItem from="1575726361464" duration="596000" />
+      <workItem from="1575778065146" duration="671000" />
+      <workItem from="1575862636840" duration="3194000" />
+      <workItem from="1575867759026" duration="3316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1893000" />
+    <option name="totallyTimeSpent" value="12588000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="704" extended-state="7" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.12045271" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.026677445" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="CMake" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.11888112" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.5192308" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.2534965" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.08566434" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.73426574" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
@@ -180,10 +197,31 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Documents/Tencent Files/675546066/FileRecv/SX1.cpp">
+    <entry file="file://$USER_HOME$/Documents/Tencent Files/675546066/FileRecv/SX1.cpp" />
+    <entry file="file://$USER_HOME$/Desktop/模式识别/forstudent/验证实验代码包/facedetecttest/facedetecttest.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="159" column="29" selection-end-line="202" />
+        <state relative-caret-position="252">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#226#239#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Tencent Files/675546066/FileRecv/SY1_SK3.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex1.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
@@ -191,14 +229,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ex1.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2737">
-          <caret line="202" selection-start-line="202" selection-end-line="202" />
+        <state relative-caret-position="90">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1728">
+          <caret line="126" column="32" selection-start-line="126" selection-start-column="32" selection-end-line="126" selection-end-column="32" />
           <folding>
-            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#39#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
