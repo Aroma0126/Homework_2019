@@ -4,15 +4,14 @@
 
 import pandas as pd
 import math
+import random
+import numpy as np
 # 取出数据
-datasets = pd.read_excel('..\data\student2019.xlsx')
-
-# 与朴素贝叶斯分类器不同，这里的身高体重都是连续变量
-# 没办法用0-1之间的一个概率值表示
-# 解决方案：这时 可以假设身高 体重 鞋码都是正态分布
-# 通过样本计算出均值和方差 也就是得到正态分布的密度函数
-# 有了密度函数 就可以把值代入 算出某一点的密度函数的值
-
+datasets = pd.read_excel('..\data\student2019.xlsx') # 默认跳过头了
+datasets = (np.array(datasets)).tolist()
+# print(type(datasets[1][0]),type(datasets[1][1]))
+# print(type(datasets))
+# print(datasets)
 
 class Bayes(object):
   def __init__(self,train_data):
@@ -20,16 +19,15 @@ class Bayes(object):
     # 存放每个特征的方差
     self.model_para = {}
 
-  def train_model(self):
-    nothing = 0
-
-
-
   def mean(self,data):
+    if type(data[0]) == str:
+      return
     return sum(data)/float(len(data))
 
   def std(self,data):
   # 计算方差,公式为 [((x1-x)^2 + (x2-x)^2 + (x3-x)^3 + ...)/n - 1]^0.5
+    if type(data[0]) == str:
+      return
     mean = self.mean(data)
     sum = 0
     for x in data:
@@ -41,7 +39,7 @@ class Bayes(object):
   # 对每一类样本的每个特征计算均值和方差，结果保存在列表中，依次为第一维特征、第二维特征等...的均值和方差
   def summarize(self, vectors):
     # zip利用 * 号操作符，可以将不同元组或者列表压缩为为列表集合。用来提取每类样本下的每一维的特征集合
-    summaries = [(self.mean(attribute), self.stdev(attribute)) for attribute in zip(*vectors)]
+    summaries = [(self.mean(attribute), self.std(attribute)) for attribute in zip(*vectors)]
     # 将代表类别的最后一个数据删掉，只保留均值和方差
     del summaries[-1]
     return summaries
@@ -75,52 +73,53 @@ class Bayes(object):
   def train_bayes(self):
     # 把训练集按照男女分类
     seperated_class = {}
-    for i in range(len(train_data)):
-      student = self.train_data[i]
-      if (student[-1] == '男'):
-        seperated_class[0].append(student)
-      else:
-        seperated_class[1].append(student)
+    for i in range(len(self.data)):
+      student = self.data[i]
+      # print(i,student)
+      if student[-1] not in seperated_class:
+        seperated_class[student[-1]] = []
+      seperated_class[student[-1]].append(student)
 
     for class_value,student in seperated_class.items():
+        # 将每一个类别的均值和方差保存在对应的键值对中
+        # print(class_value,student)
+        self.model_para[class_value] = self.summarize(student)
+    return self.model_para
 
 
-def cal_prior_retes(probablity):
-  # P(A) 先验概率 男和女的概率都为1/2
-  # 可以假设不同的先验概率 0.5/0.5 0.75/0.25
-  prior_pro_boy =  probablity
-  prior_pro_girl = 1 - probablity
-  return prior_pro_boy,prior_pro_girl
-
-def cal_probablity_function():
-  # 计算可能性函数，即调整因子 P(B|A)/P(B)
-  # 各个特征值在已知性别下的概率
-  # 计算密度函数
-  likelyhood = {}
-
-  height_list = {}
-  weight_list = {}
-  footsize_list = {}
-
-  for index in datasets.index.values:
-    height_list[index] = datasets.ix[index,0]
-    weight_list[index] = datasets.ix[index,1]
-    footsize_list[index] = datasets.ix[index,2]
-
-  # 先求出均值mean,var方差,std标准差
-  height_mean = np.mean(height_list)
-  weight_mean = np.mean(weight_list)
-  footsize_mean = np.mean(footsize_list)
-
-
-def norm():
-  # 正则化数据
+def load_dataset():
+  return
 
 def split_dataset():
   # 按照比例划分训练集和测试集
-  split_num = 0.7
-  return
+  # print(len(datasets))
+  splitRatio = 0.90
+  trainSize = int(len(datasets) * splitRatio)
+  trainSet = []
+  copy = list(datasets)
+  while len(trainSet) < trainSize:
+    index = random.randrange(len(copy))
+    # 原始数据集剔除训练集之后剩下的就是测试集
+    trainSet.append(copy.pop(index))
+  return [trainSet, copy]
+
+
+def cal_accurency(testData,bayes):
+  # 计算准确率
+  correct_nums = 0
+  for i in range(len(testData)):
+    # 逐次计算每一个数据的分类类别
+    if testData[i][-1] == bayes.cal_class_pro(testData[i]):
+      correct_nums += 1
+  return correct_nums
 
 if __name__ == '__main__':
 
-  train_data,test_data = split_dataset()
+  trainData, testData = split_dataset()
+  bayes = Bayes(trainData)
+  # model为训练之后的bayes分类器模型的概率参数
+  model = bayes.train_bayes()
+  print(model)
+  correct_nums = cal_accurency(testData, bayes)
+  print("分类准确率 %f%%" % (correct_nums / len(testData) * 100.0))
+
