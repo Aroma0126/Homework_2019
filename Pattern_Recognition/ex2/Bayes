@@ -52,14 +52,16 @@ class Bayes(object):
     left = 1 / math.sqrt(b * math.pi)
     return left * exponent
 
-  def cal_class_pro(self,input_data):
+  def cal_class_pro(self,input_data,attr_num):
     # input_data 一个待分类数据
+    # 三个特征都考虑了
     probabilities = {}
-
     for class_value,class_sum in self.model_para.items():
       probabilities[class_value] = 1
-      # len(class_sum) 特征个数
-      for i in range(len(class_sum)):
+      # print(len(class_sum))
+      # for i in range(len(class_sum)):
+      for i in range(0,attr_num):
+        print("i:",i)
         mean,std = class_sum[i]
         # 提取带分类数据的每一个特征值
         # 提取要测试的
@@ -67,7 +69,14 @@ class Bayes(object):
         # 计算联合概率密度
         probabilities[class_value] *= self.cal_probability(x,mean,std)
 
-    prediction = max(probabilities,key=probabilities.get)
+    boy_pro,girl_pro = self.cal_prior()
+    a = probabilities['男'] * boy_pro
+    b = probabilities['女'] * girl_pro
+    if a > b:
+      prediction = '男'
+    else:
+      prediction = '女'
+    print(input_data,probabilities,"prediction",prediction)
     return prediction
 
   def train_bayes(self):
@@ -85,6 +94,11 @@ class Bayes(object):
         # print(class_value,student)
         self.model_para[class_value] = self.summarize(student)
     return self.model_para
+
+  def cal_prior(self):
+    boy_prior = 0.5
+    girl_prior = 1 - boy_prior
+    return boy_prior,girl_prior
 
 
 def load_dataset():
@@ -109,7 +123,7 @@ def cal_accurency(testData,bayes):
   correct_nums = 0
   for i in range(len(testData)):
     # 逐次计算每一个数据的分类类别
-    if testData[i][-1] == bayes.cal_class_pro(testData[i]):
+    if testData[i][-1] == bayes.cal_class_pro(testData[i],1):
       correct_nums += 1
   return correct_nums
 
