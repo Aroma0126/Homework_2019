@@ -1,14 +1,20 @@
-'''
-利用贝叶斯分类器对genderdata数据进行分类
-'''
-
 import pandas as pd
 import math
 import random
 import numpy as np
+import matplotlib.pyplot as plt
+
+# draw roc pic
+from sklearn import metrics
+from sklearn.metrics import roc_curve
+
+# 开始的时候利用一个数据集内划分测试，但是这样并不好，准确率太高了
 # 取出数据
 datasets = pd.read_excel('..\data\student2019.xlsx') # 默认跳过头了
+test_datasets = pd.read_excel('..\data\student2018.xlsx')
 datasets = (np.array(datasets)).tolist()
+test_datasets = (np.array(test_datasets)).tolist()
+# print(test_datasets)
 # print(type(datasets[1][0]),type(datasets[1][1]))
 # print(type(datasets))
 # print(datasets)
@@ -16,8 +22,7 @@ datasets = (np.array(datasets)).tolist()
 class Bayes(object):
   def __init__(self,train_data):
     self.data = train_data
-    # 存放每个特征的方差
-    self.model_para = {}
+    self.model_para = {}# 存放每个特征的方差
 
   def mean(self,data):
     if type(data[0]) == str:
@@ -72,12 +77,19 @@ class Bayes(object):
     boy_pro,girl_pro = self.cal_prior()
     a = probabilities['男'] * boy_pro
     b = probabilities['女'] * girl_pro
+    temp = (probabilities['男'] + probabilities['女'])
+    aa = probabilities['男']/temp
+    bb = probabilities['女']/temp
+    print("man",aa,"girl",bb,"1-man = ",1-aa,"man_prediction = ",a,"girl_prediction = ",b)
     if a > b:
       prediction = '男'
+      # return prediction,a
+      return prediction,aa
     else:
       prediction = '女'
-    print(input_data,probabilities,"prediction",prediction)
-    return prediction
+      #return prediction,b
+      return prediction, bb
+    # print(input_data,probabilities,"prediction",prediction)
 
   def train_bayes(self):
     # 把训练集按照男女分类
@@ -100,14 +112,9 @@ class Bayes(object):
     girl_prior = 1 - boy_prior
     return boy_prior,girl_prior
 
-
-def load_dataset():
-  return
-
 def split_dataset():
-  # 按照比例划分训练集和测试集
-  # print(len(datasets))
-  splitRatio = 0.90
+
+  splitRatio = 0.70
   trainSize = int(len(datasets) * splitRatio)
   trainSet = []
   copy = list(datasets)
@@ -117,23 +124,116 @@ def split_dataset():
     trainSet.append(copy.pop(index))
   return [trainSet, copy]
 
-
 def cal_accurency(testData,bayes):
-  # 计算准确率
+
   correct_nums = 0
+  global y_true
+  y_true = list()
+  global prediction_list_forfun
+  prediction_list_forfun = list()
+  global prediction_list
+  prediction_list = list()
+
   for i in range(len(testData)):
-    # 逐次计算每一个数据的分类类别
-    if testData[i][-1] == bayes.cal_class_pro(testData[i],1):
+
+    train_re, prediction = bayes.cal_class_pro(testData[i], 2)
+    sample_re = testData[i][-1]
+    if sample_re == '男':
+      y_true.append(1)
+      prediction_list_forfun.append(prediction)
+      print("sample_re = ", sample_re, "train_re = ", train_re, "prediction = ", prediction)
+      temp = [sample_re, prediction]
+      prediction_list.append(temp)
+    elif sample_re == '女':
+      y_true.append(0)
+      prediction_list_forfun.append(prediction)
+      print("sample_re = ", sample_re, "train_re = ", train_re, "prediction = ", prediction)
+      temp = [sample_re,prediction]
+      prediction_list.append(temp)
+
+    if sample_re == train_re:
       correct_nums += 1
+
   return correct_nums
+
+def get_sec(elem):
+  return elem[1]
+
+def draw_roc():
+
+  # print(prediction_list)
+
+  prediction_list.sort(key=get_sec,reverse=True)
+  print(prediction_list)
+  result_true = []
+  thresholds = []
+  for i in range(len(prediction_list)):
+    print(prediction_list[i])
+    if prediction_list[i][0] == '男':
+      result_true.append(1)
+      thresholds.append(prediction_list[i][1])
+    elif prediction_list[i][0] == '女':
+      result_true.append(0)
+      thresholds.append(prediction_list[i][1])
+
+
+
+
+  tps = []
+  fps = []
+  for threshold in thresholds:
+
+    # 大于等于阈值为1, 否则为0
+    y_prob = [1 if i >= threshold else 0 for i in thresholds]
+    # 结果是否正确
+    result = [i == j for i, j in zip(result_true, y_prob)]
+    # 是否预测为正类
+    positive = [i == 1 for i in y_prob]
+
+    tp = [i and j for i, j in zip(result, positive)]  # 预测为正类且预测正确
+    fp = [(not i) and j for i, j in zip(result, positive)]  # 预测为正类且预测错误
+
+    tps.append(tp.count(True))
+    fps.append(fp.count(True))
+    # print(tp.count(True), fp.count(True))
+
+  #print(fps, tps)
+  plt.plot(fps,tps,'b')
+  plt.ylabel('tps')
+  plt.xlabel('fps')
+  plt.show()
+
+
+  '''
+  fpr = [i / fps[-1] for i in fps]
+  tpr = [i / tps[-1] for i in tps]  # tps / tps[-1]
+  plt.plot(fpr, tpr, 'r')
+  plt.ylabel('tpr')
+  plt.xlabel('fpr')
+  plt.show()
+  print(fpr,tpr)
+  print(len(result_true))
+  print(len(thresholds))
+  '''
+  print(y_true)
+  print(prediction_list)
+  fpr_1,tpr_1,threshold_1 = roc_curve(y_true,prediction_list_forfun,pos_label=1,drop_intermediate=False)
+  plt.plot(fpr_1, tpr_1, 'r')
+  plt.ylabel('tpr_func')
+  plt.xlabel('fpr_func')
+  plt.show()
 
 if __name__ == '__main__':
 
-  trainData, testData = split_dataset()
+  # trainData, testData = split_dataset()
+
+  trainData = datasets
+  testData = test_datasets
   bayes = Bayes(trainData)
+
   # model为训练之后的bayes分类器模型的概率参数
   model = bayes.train_bayes()
   print(model)
   correct_nums = cal_accurency(testData, bayes)
   print("分类准确率 %f%%" % (correct_nums / len(testData) * 100.0))
-
+  draw_roc()
