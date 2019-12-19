@@ -97,6 +97,13 @@ def set_data():
             boy_list.append(temp)
         elif student[-1] == '女':
             girl_list.append(temp)
+    for i in range(len(test_datasets)):
+        student = test_datasets[i]
+        temp = [student[0], student[1]]
+        if student[-1] == '男':
+            boy_list.append(temp)
+        elif student[-1] == '女':
+            girl_list.append(temp)
     # print(boy_list)
     # print(girl_list)
     return boy_list,girl_list
