@@ -11,7 +11,6 @@ import numpy as np
 from matplotlib import pyplot as plt
 import pandas as pd
 
-
 def fisher(w1, w2):
     # 将行向量转置为列向量
     w1 = w1.T
@@ -59,9 +58,9 @@ def fisher(w1, w2):
 def get_res(X, w0, w_star):
     res = X * w_star + w0
     if res >= 0:
-        print('合格')
+        print('男')
     else:
-        print('不合格')
+        print('女')
 
 
 def get_line(w, w0):

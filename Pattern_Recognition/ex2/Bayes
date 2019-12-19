@@ -59,14 +59,14 @@ class Bayes(object):
 
   def cal_class_pro(self,input_data,attr_num):
     # input_data 一个待分类数据
-    # 三个特征都考虑了
+    # 可以三个特征都考虑，也可以改成一个或者两个
     probabilities = {}
     for class_value,class_sum in self.model_para.items():
       probabilities[class_value] = 1
       # print(len(class_sum))
       # for i in range(len(class_sum)):
       for i in range(0,attr_num):
-        print("i:",i)
+        # print("i:",i)
         mean,std = class_sum[i]
         # 提取带分类数据的每一个特征值
         # 提取要测试的
@@ -136,7 +136,10 @@ def cal_accurency(testData,bayes):
 
   for i in range(len(testData)):
 
-    train_re, prediction = bayes.cal_class_pro(testData[i], 2)
+    train_re, prediction = bayes.cal_class_pro(testData[i], 3)
+    # 3个时为 74%
+    # 2个特征时 准确率为 68%
+    # 1个 准确率为70
     sample_re = testData[i][-1]
     if sample_re == '男':
       y_true.append(1)
@@ -176,8 +179,8 @@ def draw_roc():
       result_true.append(0)
       thresholds.append(prediction_list[i][1])
 
-
-
+  # threshold就是把每一个样本的概率按从小到大排列起来
+  # 这里在计算
 
   tps = []
   fps = []
@@ -197,7 +200,7 @@ def draw_roc():
     fps.append(fp.count(True))
     # print(tp.count(True), fp.count(True))
 
-  #print(fps, tps)
+  print("fps=",fps,"tps=",tps)
   plt.plot(fps,tps,'b')
   plt.ylabel('tps')
   plt.xlabel('fps')
